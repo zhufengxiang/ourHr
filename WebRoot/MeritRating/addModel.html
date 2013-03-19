@@ -1,0 +1,154 @@
+<%@ page language="java" contentType="text/html; charset=GBK"
+    pageEncoding="GBK"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>无标题文档</title>
+
+<link rel="stylesheet" type="text/css" href="../css/hr_standard.css" />
+<link href="../css/calendar.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/list_hover.js"></script>
+
+</head>
+
+<body>
+   <script type="text/javascript" src="../js/calendar.js"></script>  <!-- 时间控件要求此段JavaScript放在此 -->
+	 <!-- hr项目中列表的标准 -->
+	 <table>
+	 	  	<tr>
+	 	  		<td class="list_left" >
+	 	  		  <img src="../images/tab_03.gif" style="position:absolute;top:1px;left:0px;">	
+	 	  		   <img src="../images/tab_20.gif" style="position:absolute;bottom:1px;left:0px;">	 	  		</td>
+		 	  	<td width="*">
+							 <div class="hr_list">
+							 	  <!-- 列表的第一行，包括标题，一些选项如 全选、新增、修改、删除 -->
+                                   	  <div class="top_line">
+							 	     	<!-- 列表的标题 -->
+							 	     	<h1 class="list_title"><img src="../images/311.gif" >&nbsp;&nbsp;当前位置：增加模板 －&gt; 模板管理<</h1>
+							 	     	<!-- 列表的操作选项 -->
+                                         <div class="hr_list">
+							 	     	<ul class="ctrl_option">
+                                          <li><img src="../images/001.gif" width="20" height="14" /><a onClick="showWin()">新增</a></li>	
+							 	   
+							 	     	</ul>
+                                        </div>
+							 	  </div><!-- 列表的第一行结束 -->
+							 	
+							 	     
+							    
+							 	     
+							 	  <!-- 主列表 -->
+							 	  <table width="83%"  onmouseover="changeto()"  onmouseout="changeback() " class="main_table">
+                                    <colgroup>
+                                    <col />
+                                    <col colspan="5"/>
+                                    </colgroup>
+                                    <thead background="../images/tab_14.gif">
+                                    </thead>
+							 	    <th>考核部门</th>
+							 	        <th>适用职位</th>
+							 	      <th>考核月份</th>
+							 	      <th>考核满分</th>
+							 	      <th>考核明细</th>
+							 	      <th>登记时间</th>
+							 	      <th>操作</th>
+							 	      <tr>
+							 	        <td>人事部</td>
+							 	        <td>普通员工</td>
+							 	        <td>2010-05</td>
+							 	        <td>100</td>
+							 	        <td><a href="find.html">查看</a></td>
+							 	        <td>2010-08-5</td>
+							 	        <td><a href="modify.html">修改</a>&nbsp;&nbsp;<a href="#">刪除</a>&nbsp;&nbsp;<a href="#">提交申核</a></td>
+						 	        </tr>
+                                    <tr>
+                                      <td>人事部</td>
+                                      <td>经理</td>
+                                      <td>2010-05</td>
+                                      <td>100</td>
+                                      <td><a href="find.html">查看</a></td>
+                                      <td>2010-08-5</td>
+                                      <td>&nbsp;&nbsp;申核中...</td>
+                                    </tr>
+                                    <tr>
+                                      <td>人事部</td>
+                                      <td>主管</td>
+                                      <td>2010-05</td>
+                                      <td>100</td>
+                                      <td><a href="find.html">查看</a></td>
+                                      <td>2010-08-5</td>
+                                      <td>&nbsp;&nbsp;申核通过&nbsp;&nbsp;<a href="showModel.html">发布模板</a></td>
+                                    </tr>
+                                  </table>
+							 	  <div class="list_fun"></div>
+                                    <div class="record_detail" id="win">
+							 	      <table>
+							 	          <tr>
+							 	          	   <td colspan="2" ><span id="X" onClick="closeWin()">关闭</span></td>
+							 	          </tr>
+                                           <tr>
+							 	          	   <td>考核部门：</td><td><select><option>人事部</option><option>市场部</option></select></td>
+							 	          </tr>
+							 	          <tr>
+							 	          	   <td >适用职位：</td><td><select><option>普通员工</option><option>经理</option></select></td>
+							 	          </tr>
+                                           
+										   <tr>
+							 	          	   <td >考核月份：</td><td><input type="input" name="username"  value=""></td>
+							 	          </tr>
+							 	          <tr>
+							 	          	   <td>考核总分：</td>
+							 	          	    <td>
+													<input type="input" name="username"  value="">      <input type="button" value="增加明细" id="add" onClick="addTitle()"/>
+							 	          	   	</td>
+							 	          </tr>
+											 
+                                             <tr>
+							 	          	   <td colspan="2" id="ttable">
+                                               		<table>
+                   	  			  					<tr>
+							 	          	   				<td width="15%">考核内容：</td>
+	 	          	   										<td width="15%">考核权重</td>
+ 	          	   				   							 <td width="70%">考核规则</td>
+						 	          				  </tr>
+                                                        <tr>
+							 	          	   				<td><input type="input" name="username"  value=""></td><td><input type="input" name="username"  value=""></td><td><input type="input" name="username"  value=""></td>
+							 	          				</tr>
+                                                    </table>
+                                               </td>
+							 	         	 </tr>
+                                          
+                                           <tr>
+							 	          	   <td colspan="2" align="center"><input type="submit" value="保存"/>&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="重置"/></td>
+							 	          	  
+							 	          </tr>
+                                         
+							 	         
+							 	      </table>
+                  </div>
+                  
+                    
+							 	  <!-- 列表的最后一行，包括分页信息 -->
+							 	  <div class="list_fun">
+							 	  	  <span style="float:left;">共120条记录，当前第1/10页，每页10条记录</span>
+							 	  	  <div class="change_page">
+							 	  	  	   <a href="#"><img src="../images/first.gif" /></a>
+							 	  	  	   <a href="#"><img src="../images/back.gif" /></a>
+							 	  	  	   <a href="#"><img src="../images/next.gif" /></a>
+							 	  	  	   <a href="#"><img src="../images/first.gif" /></a>
+							 	  	  	   <span>跳转到</span>
+							 	  	  	   <input name="textfield" type="text" size="3" />
+							 	  	  	   &nbsp;&nbsp;<span>页</span>
+							 	  	  	   <a href="#"><img src="../images/go.gif" /></a>							 	  	  </div>
+							 	  </div>
+							 </div><!-- hr_list结束 -->		 	  	</td>
+	 	  	  <td class="list_right">
+	 	  	     <img src="../images/tab_07.gif" style="position:absolute;top:1px;right:2px;">	
+	 	  		   <img src="../images/tab_22.gif" style="position:absolute;bottom:1px;right:2px;">	 	  	  </td>
+	 	  	 </tr>
+	 </table>
+	 
+	 
+</body>
+</html>

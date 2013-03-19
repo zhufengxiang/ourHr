@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style type="text/css">
+<!--
+ *{
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size: 12px;
+	vertical-align:middle;   /* 行内元素的居中设置 */
+}
+
+img{
+	 border:0px;
+}
+
+.hr_list th , .hr_list td{
+   border:1px solid #C0D198;	
+}
+
+
+a:link {
+	color: #06482a;
+	text-decoration: none;
+
+}
+a:visited {
+	color: #06482a;
+	text-decoration: none;
+}
+a:hover {
+	color: #FF0000;
+	text-decoration: underline;
+}
+a:active {
+	color: #FF0000;
+	text-decoration: none;
+}
+
+.list_left{
+	background:url("../images/tab_12.gif") repeat-y;
+	position:relative;
+	width:9px;
+}
+.list_right{
+	background:url("../images/tab_16.gif") repeat-y;
+	position:relative;
+	width:9px;
+}
+
+.top_line{
+	 height:30px;
+	 width:100%;
+	 background:url("../images/tab_05.gif");
+}
+
+.list_title{
+	 height:30px;
+   font-size: 12px;
+	 color: #1F4A65;
+	 font-weight: bold;	
+	 float:left;
+	 line-height:30px;
+}
+
+.clear_float{
+   clear:both;
+}
+
+.list_title img{
+   margin-left:19px;	
+}
+
+.ctrl_option img{
+   margin-right:10px;
+}
+
+.ctrl_option{
+   float:right;	
+   margin-right:15px;
+}
+
+.ctrl_option li{
+   float:left;	
+   width:60px;
+   list-style:none;
+   line-height:30px;
+}
+.main_table{
+   text-align:center;	
+   width:100%;
+   table-layout:fixed;         /*  均匀非配表格  */
+   border-collapse:collapse;  /* 去除表格中所有的空隙 */
+}
+
+.main_table img{
+   margin-right:10px;
+}
+
+table{
+	border-collapse:collapse;  /* 去除表格中所有的空隙 */
+	
+}
+
+.main_table th{
+	 height:24px;
+	 background:url("../images/tab_14.gif") ;
+}
+
+.main_table td{
+	 background:white;
+	 height:18px;	
+}
+
+.change_page{
+   float:right;	
+   height:29px;
+   margin-right:15px;
+}
+
+.last_line{
+	height:29px;
+	line-height:29px;
+	background:url("../images/tab_21.gif");
+	vertical-align:middle;
+	width:100%;
+}
+
+.last_line p{
+	height:29px;
+	float:left;
+	padding-left:19px;
+}
+
+-->
+</style>
+
+
+<script>
+var  highlightcolor='#eafcd5';
+//此处clickcolor只能用win系统颜色代码才能成功,如果用#xxxxxx的代码就不行,还没搞清楚为什么:(
+var  clickcolor='#51b2f6';
+function  changeto(){
+source=event.srcElement;
+if  (source.tagName=="TR"||source.tagName=="TABLE")
+return;
+while(source.tagName!="TD")
+source=source.parentElement;
+source=source.parentElement;
+cs  =  source.children;
+//alert(cs.length);
+if  (cs[1].style.backgroundColor!=highlightcolor&&source.id!="nc"&&cs[1].style.backgroundColor!=clickcolor)
+for(i=0;i<cs.length;i++){
+	cs[i].style.backgroundColor=highlightcolor;
+}
+}
+
+function  changeback(){
+if  (event.fromElement.contains(event.toElement)||source.contains(event.toElement)||source.id=="nc")
+return
+if  (event.toElement!=source&&cs[1].style.backgroundColor!=clickcolor)
+//source.style.backgroundColor=originalcolor
+for(i=0;i<cs.length;i++){
+	cs[i].style.backgroundColor="";
+}
+}
+
+function  clickto(){
+source=event.srcElement;
+if  (source.tagName=="TR"||source.tagName=="TABLE")
+return;
+while(source.tagName!="TD")
+source=source.parentElement;
+source=source.parentElement;
+cs  =  source.children;
+//alert(cs.length);
+if  (cs[1].style.backgroundColor!=clickcolor&&source.id!="nc")
+for(i=0;i<cs.length;i++){
+	cs[i].style.backgroundColor=clickcolor;
+}
+else
+for(i=0;i<cs.length;i++){
+	cs[i].style.backgroundColor="";
+}
+}
+</script>
+
+</head>
+
+<body>
+
+	 <!-- hr项目中列表的标准 -->
+	 <table>
+	 	  	<tr>
+	 	  		<td  class="list_left" >
+	 	  		  <img src="../images/tab_03.gif" style="position:absolute;top:1px;left:0px;">	
+	 	  		   <img src="../images/tab_20.gif" style="position:absolute;bottom:1px;left:0px;">	 	  		</td>
+		 	  	<td>
+							 <div class="hr_list">
+							 	  <!-- 列表的第一行，包括标题，一些选项如 全选、新增、修改、删除 -->
+							 	  <div class="top_line">
+							 	     	<!-- 列表的标题 -->
+							 	     	<h1 class="list_title"><img src="../images/311.gif" >&nbsp;&nbsp;系统设置 &gt; 职位设置 &gt;职位列表</h1>
+							 	     	<!-- 列表的操作选项 -->
+							 	     	<ul class="ctrl_option">
+							 	     	   <li><input type="checkbox" name="checkAll" value="checkAll" />全选</li>
+							 	     	   <li style="width:80px;"><a href="positionAdd.html"><img src="../images/001.gif" width="14" height="14" />新增职位</a></li>	
+						 	     	      <li><img src="../images/083.gif" width="14" height="14" />删除</li>	
+							 	     	</ul>
+						 	   </div><!-- 列表的第一行结束 -->
+							 	     
+							 	  <!-- 主列表 -->  
+							 	  <table width="100%"  onmouseover="changeto()"  onmouseout="changeback() " class="main_table">
+ <colgroup>
+							 	  	  	 <col />
+							 	  	  	 <col colspan="5"/>
+							 	  		</colgroup>
+							 	      <thead background="../images/tab_14.gif"><tr><th width="40">选择</th><th width="60">职位ID</th>
+							 	      <th>职位分类</th>
+							 	      <th>职位编号</th>
+							 	      <th>部门名称</th>
+							 	      <th>职位名称</th>
+							 	      <th>登记人</th>
+							 	      <th>登记时间</th>
+							 	      <th>变更人</th>
+							 	      <th>变更时间</th>
+							 	      <th>操作</th>
+							 	      
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td><td>1</td>
+							 	      <td>销售类</td>
+							 	      <td>10010</td>
+							 	      <td>销售部</td>
+							 	      <td>销售部经理</td>
+							 	      <td>王彦</td>
+							 	      <td>2010520</td>
+							 	      <td>王彦</td>
+							 	      <td>2010520</td><td><img src="../images/037.gif" alt=""/>编辑<img src="../images/010.gif"/>删除</td></tr>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td>
+							 	      <td>2</td>
+							 	      <td>开发类</td>
+							 	      <td>10010</td>
+							 	      <td>项目开发部</td>
+							 	      <td>项目经理</td>
+						 	          <td>王彦</td>
+					 	              <td>2010520</td>
+					 	              <td>王彦</td>
+				 	                <td>2010520</td><td><img src="../images/037.gif" alt=""/>编辑<img src="../images/010.gif"/>删除</td></tr>	
+							 	      <tr>
+							 	        <td><input name="checkbox" type="checkbox" value="checkbox" /></td>
+							 	        <td>3</td>
+							 	        <td>财务类</td>
+							 	        <td>10010</td>
+							 	        <td>财务</td>
+							 	        <td>财务主管</td>
+							 	        <td>王彦</td>
+							 	        <td>2010520</td>
+							 	        <td>王彦</td>
+							 	        <td>2010520</td>
+							 	        <td><img src="../images/037.gif" alt=""/>编辑<img src="../images/010.gif"/>删除</td>
+							 	        </tr>	
+							 	  </table> 
+			 	  
+	 	        <!-- 列表的最后一行，包括分页信息 -->
+							 	  <div class="last_line">
+							 	  	  <p>共120条记录，当前第1/10页，每页10条记录</p>
+							 	  	  <div class="change_page">
+							 	  	  	   <a href="#"><img src="../images/first.gif" /></a>
+							 	  	  	   <a href="#"><img src="../images/back.gif" /></a>
+							 	  	  	   <a href="#"><img src="../images/next.gif" /></a>
+							 	  	  	   <a href="#"><img src="../images/first.gif" /></a>
+							 	  	  	   <span>跳转到</span>
+							 	  	  	   <input name="textfield" type="text" class="STYLE1" style="height:10px; width:25px;" size="5" />
+							 	  	  	   &nbsp;&nbsp;<span>页</span>
+							 	  	  	   <a href="#"><img src="../images/go.gif" /></a>
+							 	  	  </div>
+							 	  </div>
+							 </div><!-- hr_list结束 -->	
+		 	  		
+	 	  	  </td>
+	 	  	  <td width="94" class="list_right">
+	 	  	     <img src="../images/tab_07.gif" style="position:absolute;top:1px;right:2px;">	
+	 	  		   <img src="../images/tab_22.gif" style="position:absolute;bottom:1px;right:2px;">	 	  	  </td>
+  	   <tr>
+	 </table>
+	 
+	 
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style type="text/css">
+<!--
+ *{
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size: 12px;
+	vertical-align:middle;   /* 行内元素的居中设置 */
+}
+
+img{
+	 border:0px;
+}
+
+.hr_list th , .hr_list td{
+   border:1px solid #C0D198;	
+}
+
+
+a:link {
+	color: #06482a;
+	text-decoration: none;
+
+}
+a:visited {
+	color: #06482a;
+	text-decoration: none;
+}
+a:hover {
+	color: #FF0000;
+	text-decoration: underline;
+}
+a:active {
+	color: #FF0000;
+	text-decoration: none;
+}
+
+.list_left{
+	background:url("../images/tab_12.gif") repeat-y;
+	position:relative;
+	width:9px;
+}
+.list_right{
+	background:url("../images/tab_16.gif") repeat-y;
+	position:relative;
+	width:9px;
+}
+
+.top_line{
+	 height:30px;
+	 width:100%;
+	 background:url("../images/tab_05.gif");
+}
+
+.list_title{
+	 height:30px;
+   font-size: 12px;
+	 color: #1F4A65;
+	 font-weight: bold;	
+	 float:left;
+	 line-height:30px;
+}
+
+.clear_float{
+   clear:both;
+}
+
+.list_title img{
+   margin-left:19px;	
+}
+
+.ctrl_option img{
+   margin-right:10px;
+}
+
+.ctrl_option{
+   float:right;	
+   margin-right:15px;
+}
+
+.ctrl_option li{
+   float:left;	
+   width:60px;
+   list-style:none;
+   line-height:30px;
+}
+.main_table{
+   text-align:center;	
+   width:100%;
+   table-layout:fixed;         /*  均匀非配表格  */
+   border-collapse:collapse;  /* 去除表格中所有的空隙 */
+}
+
+.main_table img{
+   margin-right:10px;
+}
+
+table{
+	border-collapse:collapse;  /* 去除表格中所有的空隙 */
+	
+}
+
+.main_table th{
+	 height:24px;
+	 background:url("../images/tab_14.gif") ;
+}
+
+.main_table td{
+	 background:white;
+	 height:18px;	
+}
+
+.change_page{
+   float:right;	
+   height:29px;
+   margin-right:15px;
+}
+
+.last_line{
+	height:29px;
+	line-height:29px;
+	background:url("../images/tab_21.gif");
+	vertical-align:middle;
+	width:100%;
+}
+
+.last_line p{
+	height:29px;
+	float:left;
+	padding-left:19px;
+}
+
+-->
+</style>
+
+
+<script>
+var  highlightcolor='#eafcd5';
+//此处clickcolor只能用win系统颜色代码才能成功,如果用#xxxxxx的代码就不行,还没搞清楚为什么:(
+var  clickcolor='#51b2f6';
+function  changeto(){
+source=event.srcElement;
+if  (source.tagName=="TR"||source.tagName=="TABLE")
+return;
+while(source.tagName!="TD")
+source=source.parentElement;
+source=source.parentElement;
+cs  =  source.children;
+//alert(cs.length);
+if  (cs[1].style.backgroundColor!=highlightcolor&&source.id!="nc"&&cs[1].style.backgroundColor!=clickcolor)
+for(i=0;i<cs.length;i++){
+	cs[i].style.backgroundColor=highlightcolor;
+}
+}
+
+function  changeback(){
+if  (event.fromElement.contains(event.toElement)||source.contains(event.toElement)||source.id=="nc")
+return
+if  (event.toElement!=source&&cs[1].style.backgroundColor!=clickcolor)
+//source.style.backgroundColor=originalcolor
+for(i=0;i<cs.length;i++){
+	cs[i].style.backgroundColor="";
+}
+}
+
+function  clickto(){
+source=event.srcElement;
+if  (source.tagName=="TR"||source.tagName=="TABLE")
+return;
+while(source.tagName!="TD")
+source=source.parentElement;
+source=source.parentElement;
+cs  =  source.children;
+//alert(cs.length);
+if  (cs[1].style.backgroundColor!=clickcolor&&source.id!="nc")
+for(i=0;i<cs.length;i++){
+	cs[i].style.backgroundColor=clickcolor;
+}
+else
+for(i=0;i<cs.length;i++){
+	cs[i].style.backgroundColor="";
+}
+}
+</script>
+
+</head>
+
+<body>
+
+	 <!-- hr项目中列表的标准 -->
+     <table >
+       <tr>
+         <td width="9" height="366" class="list_left" ><img src="../images/tab_20.gif" style="position:absolute; bottom:230px; left:1174px;" /> </td>
+         <td><div class="hr_list">
+           <!-- 列表的第一行，包括标题，一些选项如 全选、新增、修改、删除 -->
+            
+           <div class="top_line">
+               <blockquote>
+                 <blockquote>
+                   <blockquote>
+                     <blockquote>
+                       <blockquote>
+                         <h1 align="center" class="list_title">   当前位置：管理首页 &gt;激励管理 </h1>
+                       </blockquote>
+                     </blockquote>
+                   </blockquote>
+                 </blockquote>
+               </blockquote>
+           </div>
+           <!-- 列表的第一行结束 -->
+           
+           <div class="main_input">
+			<html:form action="bonus/bonusDo.do?commend=addBonus" method="post">
+				<div class="content">
+					<table width="*" cellpadding="0" cellspacing="0">
+<tr align="right" bgcolor="#F1F2FE">
+							<td width="1444" height="29" colspan="4">
+                            
+                            
+                              <input type="checkbox" name="checkAll" value="checkAll" />全选
+						      <input type="button" value="查询">
+                              <input type="button" value="添加">
+                              <input type="button" value="删除">
+                              <input type="button" value="重置">
+   			  </td>
+				    </tr>
+						<tr>
+							<td height="104" colspan="5">
+							  <table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+										<td  class="tdbg1">
+											部门名称：										</td>
+										<td  >
+											<select name="deptId" id="selectDeptId" onChange="chooseHumanArchive(this.value)">
+											</select>
+											<span id="deptNamefail">*</span>										</td>
+										<td   class="tdbg1">
+											受激励人：										</td>
+										<td  >
+											<select name="humanId" id="selectHumanId">
+											</select>
+					<span id="humanNamefail">*</span>										</td>
+                                            <td  >
+											审核状态：										</td>
+					<td >
+											<select name="humanId" id="selectHumanId">
+											</select>
+					<span id="humanNamefail">*</span>										</td>
+                                            
+								</tr>
+									<tr>
+										<td >
+											激励项目：										</td>
+								  <td >
+											<html:text property="bonusItem"/>
+											<span id="bonusItemfail">*</span>										</td>
+										<td class="tdbg1">
+											激励等级：
+											<br>										</td>
+										<td>
+											<html:text property="bonusDegree"/>
+											<span id="donusDegreefail">*</span>										</td>
+                                            <td class="tdbg1">
+											激励价值：
+											<br>										</td>
+                                            <td>
+											<html:text property="bonusDegree"/>
+											<span id="donusDegreefail">*</span>										</td>
+                                            
+									</tr>
+									<tr>
+								
+									</tr>
+									<tr>
+										<td colspan="3" height="40" class="tdbg1">
+											备 注：
+											<br>										</td>
+								  <td colspan="3">
+											<textarea rows="4" cols="110" name="remark2" ></textarea>*									</td>
+									</tr>
+							  </table>						  </td>
+					  </tr>
+					</table>
+				</div>
+             <!-- 主列表 -->
+             <table width="91%" height="157"  onmouseover="changeto()"  onmouseout="changeback() " class="main_table">
+               <th width="10%"><table width="100%" height="104"  onmouseover="changeto()"  onmouseout="changeback() " class="main_table">
+<colgroup>
+                     <col />
+                     <col colspan="5"/>
+                     </colgroup>
+                     <thead background="../images/tab_14.gif">
+                     </thead>
+                     <th width="8%" height="27">选择</th>
+                 <th width="8%" height="27">编号</th>
+            <th width="10%">部门</th>
+                   <th width="5%">员工</th>
+                   <th width="7%">激励项目</th>
+                   <th width="7%">激励价值</th>
+                   <th width="7%">激励等级</th>
+                   <th width="6%">登记人</th>
+                   <th width="7%">登记时间</th>
+                   <th width="8%">复核人</th>
+                   <th width="8%">复核时间</th>
+                   <th width="8%">复核状态</th>
+                   <th width="19%">操作</th>
+                 <tr>
+                   <td><input name="checkbox11" type="checkbox" value="checkbox" /></td>
+                   <td>1</td>
+                   <td>市场营销</td>
+                   <td>张一</td>
+                   <td>资金管理</td>
+                   <td>9.8</td>
+                   <td>LV8</td>
+                   <td>曾哥</td>
+                   <td>9:20</td>
+                   <td>春哥</td>
+                   <td>8：00</td>
+                   <td>未审核</td>
+                   <td ><table><tr>
+                   	<td onClick="window.location.href='bestir_detail.html'">详细</td>
+                   	<td onClick="window.location.href='bestir_update.html'">修改 </td>
+                 
+                    
+                   </tr></table> </td>
+                 </tr>
+                 <tr>
+                   <td><input name="checkbox11" type="checkbox" value="checkbox" /></td>
+                   <td>2</td>
+                   <td>财会</td>
+                   <td>赵二</td>
+                   <td>智能回收</td>
+                   <td>9.8</td>
+                   <td>LV10</td>
+                   <td>曾哥</td>
+                   <td>9:20</td>
+                   <td>春哥</td>
+                   <td>5：30</td>
+                   <td>通过审核</td>
+                   <td>
+                   <table><tr>
+                   	<td onClick="window.location.href='bestir_detail.html'">详细</td>
+                   	<td onClick="window.location.href='bestir_update.html'">修改 </td>
+                    
+                 
+                   </tr></table>
+                   </td>
+                 </tr>
+                 </table></th>
+             </table>
+           <!-- 列表的最后一行，包括分页信息 -->
+         <div class="last_line">
+               <p>共120条记录，当前第1/10页，每页10条记录</p>
+               <div class="change_page"> <a href="#"><img src="../images/first.gif" /></a> <a href="#"><img src="../images/back.gif" /></a><a href="#"><img src="../images/next.gif" /></a><a href="#"><img src="../images/first.gif" /></a><span>跳转到</span>
+                 <input name="textfield" type="text" class="STYLE1" style="height:10px; width:25px;" size="5" />
+                 &nbsp;&nbsp;<span>页</span> <a href="#"><img src="../images/go.gif" /></a> </div>
+           </div>
+         </div>
+             <!-- hr_list结束 -->         </td>
+         <td width="25" class="list_right">&nbsp;</td>
+       </tr>
+       <tr> </tr>
+</table>
+</body>
+</html>

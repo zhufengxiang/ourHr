@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>产品中心</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8"><LINK 
+href="css/list.css" type=text/css rel=stylesheet>
+<SCRIPT src="js/jquery-1.4.1.js" type=text/javascript></SCRIPT>
+
+<SCRIPT src="js/jquery.form.js" type=text/javascript></SCRIPT>
+
+<SCRIPT language=javascript>
+function CheckOthers(form){
+   for (var i=0;i<form.elements.length;i++){
+      var e = form.elements[i];
+      if (e.checked==false){
+	     e.checked = true;
+      }
+      else{
+	     e.checked = false;
+      }
+   }
+}
+function openAddDept(){
+	top.$.dialogUI({
+		title:"添加部门信息",
+		url:"./jypx/jypx_pxlb_add.html",
+		OKEvent:okEvent,
+		//CancelEvent:cancelEvent,
+		css:{width:"550",height:"142"}
+	});
+}
+function editDocument(){
+	top.$.dialogUI({
+		title:"编辑部门信息",
+		url:"./jypx/jypx_pxlb_update.html",
+		OKEvent:okEvent,
+		//CancelEvent:cancelEvent,
+		css:{width:"550",height:"142"}
+	});
+}
+function okEvent(){
+	alert('ok被点击');
+}
+function cancelEvent(){
+	alert('cancelEvent被点击');
+}
+function clearForm(id){
+	$("#"+id).clearFields();
+}
+
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.5726" name=GENERATOR></HEAD>
+<BODY>
+<TABLE cellSpacing=1 cellPadding=3 width="100%" bgColor=#3fcca7 border=0>
+  <TBODY>
+  <TR>
+    <TD noWrap background=../images/th_bg.gif height=25><FONT 
+      color=#ffffff><STRONG>当前位置：教育培训 －&gt; 培训项目</STRONG></FONT></TD>
+  </TR>
+  <TR>
+    <TD vAlign=center noWrap bgColor=#ebf2f9 height=30>
+      <TABLE cellSpacing=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="475" height=25 colSpan=10><IMG style="CURSOR: hand" 
+            onclick=openAddDept() src="images/new.gif">&nbsp; <IMG 
+            style="CURSOR: hand" onclick=editDocument() 
+            src="images/update.gif">&nbsp; <IMG style="CURSOR: hand" 
+            onclick=editDocument() src="images/delete.gif"> </TD></TR>
+  <FORM name=formSearch action="" method=post></FORM><td width="65"></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=1 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height=1></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=1 cellPadding=3 width="100%" bgColor=#3fcca7 border=0>
+  <FORM name=form action="" method=post>
+  <TBODY>
+  <TR>
+    <TD class=td_title width=30> <input name="checkbox2" 
+      type=checkbox 
+      style="WIDTH: 18px; HEIGHT: 18px" title=全选 onClick=CheckOthers(this.form)></TD>
+    <TD class=td_title width=29>序号</TD>
+    <TD class=td_title width=115>培训项目</TD>
+
+    <TD width="112" class=td_title>培训模式</TD>
+    <TD width="351" class=td_title>类别备注</TD>
+  </TR>
+  <TR class=tr_show ondblclick=editDocument(1)>
+    <TD noWrap align=middle><input name="checkbox" 
+      type=checkbox style="WIDTH: 13px; HEIGHT: 13px"></TD>
+    <TD noWrap align=middle height=20>1</TD>
+    <TD noWrap align=left>java</TD>
+   
+    <TD noWrap align=left>岗前培训</TD>
+    <TD noWrap align=left>无</TD>
+  </TR>
+  <TR ondblclick=editDocument(1) 
+  onmouseover="this.style.backgroundColor = '#FFFFFF'" style="CURSOR: hand" 
+  onmouseout="this.style.backgroundColor = ''" bgColor=#ebf2f9>
+    <TD noWrap align=middle><INPUT style="WIDTH: 13px; HEIGHT: 13px" 
+      type=checkbox></TD>
+    <TD noWrap align=middle height=20>2</TD>
+    <TD noWrap align=left>html</TD>
+   
+    <TD noWrap align=left>在职培训</TD>
+    <TD noWrap align=left>无</FONT></TD></TR>
+  <TR ondblclick=editDocument(1) 
+  onmouseover="this.style.backgroundColor = '#FFFFFF'" style="CURSOR: hand" 
+  onmouseout="this.style.backgroundColor = ''" bgColor=#ebf2f9>
+    <TD noWrap align=middle><INPUT style="WIDTH: 13px; HEIGHT: 13px" 
+      type=checkbox></TD>
+    <TD noWrap align=middle height=20>3</TD>
+    <TD noWrap align=left>jsp</TD>
+   
+    <TD align=left noWrap>岗前培训</TD>
+    <TD noWrap align=left>对计算机相关知识的了解和计算机操作的学习</TD>
+  </TR>
+  <TR>
+    <TD noWrap bgColor=#d7e4f7 colSpan=11>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+        <TBODY>
+          <TR>
+            <TD>共有<FONT color=#ff6600>10</FONT>条记录&nbsp; 当前第<FONT 
+            color=#ff6600>1/1</FONT></STRONG>&nbsp;页 
+              <TD align=right>&nbsp; <A 
+            href="http://10.188.181.146/pub/dept_main.html#">首页</A>&nbsp;&nbsp;<A 
+            href="http://10.188.181.146/pub/dept_main.html#">上一页</A>&nbsp;&nbsp;<A 
+            href="http://10.188.181.146/pub/dept_main.html#">下一页</A>&nbsp;&nbsp;<A 
+            href="http://10.188.181.146/pub/dept_main.html#">末页</A>&nbsp;&nbsp; 
+          跳到：第&nbsp;<INPUT class=textfield 
+            onkeydown=if(event.keyCode==13)event.returnValue=false 
+            style="WIDTH: 40px; HEIGHT: 18px" 
+            onchange="if(/\D/.test(this.value)){alert('只能在跳转目标页框内输入整数！');this.value='1';}" 
+            value=1 name=SkipPage>&nbsp;页 <INPUT class=button style="WIDTH: 25px; HEIGHT: 18px" onclick='GoPage("")' type=button value=GO name=submitSkip>          </TD></TR></TBODY></TABLE></TD></TR></FORM></TBODY></TABLE>
+</BODY></HTML>

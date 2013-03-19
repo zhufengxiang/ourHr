@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>管理员/部门主管部门维护页面</title>
+<link rel="stylesheet" type="text/css" href="../css/hr_standard.css" />
+<script type="text/javascript" src="../js/list_hover.js" > </script>
+</head>
+
+
+<body>
+   <script type="text/javascript" src="calendar.js"></script>  <!-- 时间控件要求此段JavaScript放在此 -->
+	 <!-- hr项目中列表的标准 -->
+	 <table>
+	 	  	<tr>
+	 	  		<td class="list_left" >
+	 	  		  <img src="../images/tab_03.gif" style="position:absolute;top:1px;left:0px;">	
+	 	  		   <img src="../images/tab_20.gif" style="position:absolute;bottom:1px;left:0px;">	 		  	
+	 	  		</td>
+		 	  	<td width="*">
+							 <div class="hr_list">
+							 	  <!-- 列表的第一行，包括标题，一些选项如 全选、新增、修改、删除 -->
+							 	  <div class="top_line">
+							 	     	<!-- 列表的标题 -->
+							 	     	<h1 class="list_title"><img src="../images/311.gif" >&nbsp;&nbsp;&nbsp;系统设置  &gt; 部门管理 &gt; 部门一览</h1>
+					 	     	<!-- 列表的操作选项 -->
+							 	     	<ul class="ctrl_option">
+							 	     	   <li></li>
+                                            <li>
+						 	     	         <input type="checkbox" name="checkAll" value="checkAll"/>
+					 	     	          全选</li>
+						 	     	       <li style="width:80px;"><a href="DepartmentAdd.html"><img src="../images/001.gif" alt=                                             "新增部门" width="14" height="14" />新增部门</a></li>
+					 	     	           <li><img src="../images/083.gif" width="14" height="14" />删除</li>	
+						 	     	       <li style="width:120px;"><img src="../images/00221.gif" width="14" height="14" />查看部门组织图</li>
+							 	     	</ul>
+							 	  </div><!-- 列表的第一行结束 -->
+							 	     
+							 	  <div class="list_fun">						 	  	
+							 	  	  筛选数据： 
+							 	  	  
+
+							 	  	  
+							 	  	  部门级别:
+							 	  	  <select>
+							 	  	     <option value="1" />父级部门
+							 	  	     <option value="2" />子部门
+							 	  	  </select>
+							 	  	  
+							 	  	  状态:
+							 	  	  <select>
+							 	  	     <option value="1" />正常
+							 	  	     <option value="2" />未开放
+							 	  	  </select>
+							 	  	 
+							 	  	 <input class="button_style" type="submit" name="sort" value="筛选" />
+							 	  	  
+							 	  </div>   
+							 	     
+							 	 <!-- 主列表 -->  
+							 	  <table class="main_table"  onmouseover="changeto()"  onmouseout="changeback() ">
+							 	  	  <colgroup>
+							 	  	  	 <col />
+							 	  	  	 <col />
+							 	  	  	 <col colspan="7"/>
+							 	  		</colgroup>
+							 	      <thead background="../images/tab_14.gif"><tr><th width="40">选择</th><th width="60">序号</th><th>部门名</th>
+							 	      <th>上级部门</th>
+							 	      <th>是否有子部门</th>
+							 	      <th>状态</th>
+							 	      <th>创建人</th>
+							 	      <th>创建日期</th>
+							 	      <th>变更人</th>
+							 	      <th>变更时间</th>
+							 	      <th>修改</th>
+							 	      <th >查看</th><td width="6"></thead>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td><td>1</td>
+							 	      <td><a href="DepartmentDetail.html">销售部</a></td><td>无</td><td>有</td><td>正常</td>
+							 	      <td>王彦</td>
+							 	      <td>2010-5-20</td>
+							 	      <td>王彦</td>
+							 	      <td>2010-5-20</td>
+							 	      <td><img src="../images/037.gif"/><a href="departmentUpdate.html">修改</a></td><td><img src="../images/hi.gif"/><a href="DepartmentDetail.html">查看</a></td></tr>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td><td>1</td><td>人力资源部</td><td>无</td><td>有</td><td>正常</td>
+							 	        <td>王彦</td>
+							 	        <td>2010-5-20</td>
+						 	            <td>王彦</td>
+					 	                <td>2010-5-20</td>
+				 	                <td><img src="../images/037.gif"/><a href="DepartmentDetail.html">修改</a></td><td><img src="../images/hi.gif"/><a href="DepartmentDetail.html">查看</a></td></tr>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td><td>1</td>
+							 	      <td><a href="DepartmentDetail.html">市场部</a></td>
+						 	        <td>无</td><td>有</td><td>正常</td>
+						 	        <td>王彦</td>
+						 	        <td>2010-5-20</td>
+						 	        <td>王彦</td>
+						 	        <td>2010-5-20</td>
+						 	        <td><img src="../images/037.gif"/><a href="DepartmentDetail.html">修改</a></td><td><img src="../images/hi.gif"/><a href="DepartmentDetail.html">查看</a></td></tr>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td><td>1</td>
+							 	      <td><a href="DepartmentDetail.html">职业规划部</a></td><td>无</td><td>有</td><td>正常</td>
+							 	      <td>王彦</td>
+							 	      <td>2010-5-20</td>
+						 	          <td>王彦</td>
+					 	              <td>2010-5-20</td>
+				 	                <td><img src="../images/037.gif"/><a href="DepartmentDetail.html">修改</a></td><td><img src="../images/hi.gif"/><a href="DepartmentDetail.html">查看</a></td></tr>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td><td>1</td>
+							 	      <td>学术质量部</td><td>无</td><td>有</td><td>正常</td>
+							 	      <td>王彦</td>
+							 	      <td>2010-5-20</td>
+						 	          <td>王彦</td>
+					 	              <td>2010-5-20</td>
+				 	                <td><img src="../images/037.gif"/><a href="DepartmentDetail.html">修改</a></td><td><img src="../images/hi.gif"/><a href="DepartmentDetail.html">查看</a></td></tr>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td><td>1</td><td>人力资源部</td><td>无</td><td>有</td><td>正常</td>
+							 	        <td>王彦</td>
+							 	        <td>2010-5-20</td>
+						 	            <td>王彦</td>
+					 	                <td>2010-5-20</td>
+				 	                <td><img src="../images/037.gif"/><a href="DepartmentDetail.html">修改</a></td><td><img src="../images/hi.gif"/><a href="DepartmentDetail.html">查看</a></td></tr>	
+							 	      <tr><td height="27"><input name="checkbox11" type="checkbox" value="checkbox" /></td><td>1</td><td>人力资源部</td><td>无</td><td>有</td><td>正常</td>
+							 	        <td>王彦</td>
+							 	        <td>2010-5-20</td>
+						 	            <td>王彦</td>
+					 	                <td>2010-5-20</td>
+				 	                <td><img src="../images/037.gif"/><a href="DepartmentDetail.html">修改</a></td><td><img src="../images/hi.gif"/><a href="DepartmentDetail.html">查看</a></td></tr>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td><td>1</td><td>人力资源部</td><td>无</td><td>有</td><td>正常</td>
+							 	        <td>王彦</td>
+							 	        <td>2010-5-20</td>
+							 	        <td>王彦</td>
+							 	        <td>2010-5-20</td>
+						 	        <td><img src="../images/037.gif"/><a href="DepartmentDetail.html">修改</a></td><td><img src="../images/hi.gif"/><a href="DepartmentDetail.html">查看</a></td></tr>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td><td>1</td><td>人力资源部</td><td>无</td><td>有</td><td>正常</td>
+							 	        <td>王彦</td>
+							 	        <td>2010-5-20</td>
+							 	        <td>王彦</td>
+							 	        <td>2010-5-20</td>
+						 	        <td><img src="../images/037.gif"/><a href="DepartmentDetail.html">修改</a></td><td><img src="../images/hi.gif"/><a href="DepartmentDetail.html">查看</a></td></tr>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td><td>1</td><td>人力资源部</td><td>无</td><td>有</td><td>正常</td>
+							 	        <td>王彦</td>
+							 	        <td>2010-5-20</td>
+							 	        <td>王彦</td>
+							 	        <td>2010-5-20</td>
+						 	          <td><img src="../images/037.gif"/><a href="DepartmentDetail.html">修改</a></td><td><img src="../images/hi.gif"/><a href="DepartmentDetail.html">查看</a></td></tr>	
+							 	  </table> 
+
+			 	  
+ 	         <!-- 列表的最后一行，包括分页信息 -->
+							 	  <div class="list_fun">
+							 	  	  <span style="float:left;">共120条记录，当前第1/10页，每页10条记录</span>
+							 	  	  <div class="change_page">
+							 	  	  	   <a href="#"><img src="../images/first.gif" /></a>
+							 	  	  	   <a href="#"><img src="../images/back.gif" /></a>
+							 	  	  	   <a href="#"><img src="../images/next.gif" /></a>
+							 	  	  	   <a href="#"><img src="../images/first.gif" /></a>
+							 	  	  	   <span>跳转到</span>
+							 	  	  	   <input name="textfield" type="text" size="3" />
+							 	  	  	   &nbsp;&nbsp;<span>页</span>
+							 	  	  	   <a href="#"><img src="../images/go.gif" /></a>
+							 	  	  </div>
+							 	  </div>
+							 </div><!-- hr_list结束 -->	
+		 	  		
+		 	  	</td>
+	 	  	  <td class="list_right">
+	 	  	     <img src="../images/tab_07.gif" style="position:absolute;top:1px;right:2px;">	
+	 	  		   <img src="../images/tab_22.gif" style="position:absolute;bottom:1px;right:2px;">		
+	 	  	  </td>
+	 	  	 </tr>
+	 </table>
+	 
+	
+	 
+	 
+</body>
+</html>
+

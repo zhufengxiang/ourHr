@@ -1,0 +1,120 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ include file="../inc/tag.jsp"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/001/style.css" />
+		<script type="text/javascript" src="js/zwc/addTable.js"></script>
+		<script type="text/javascript" src="js/jquery-1.3.2.js"></script>
+		<script type="text/javascript" src="js/zwc/deleteOption.js"></script>
+		<script type="text/javascript" src="js/zwc/updateOption.js"></script>
+	</head>
+
+	<body onload="count()">
+		<div class="title">
+			当前位置：管理首页 &gt; 系统设置 &gt;题库信息
+		</div>
+		<div class="main_input">
+			<html:form action="/questionOptionGuide.do?questionId=${question.questionId}" method="post">
+				<logic:present name="question">
+					<table>
+						<tr align="center" bgcolor="#AAAAAA">
+							<td colspan="4"><font face="隶书" size="5">奋斗人力资源系统题库之添加题目选项</font></td>
+						</tr>
+						<tr>
+							<td width="7%">题目类别</td>
+							<td>${question.cmkv.majorKindName}</td>
+							<td width="10%">题目类型</td>
+							<td>
+								<logic:match value="1" name="question" property="questionType">
+									单选题
+								</logic:match>
+								<logic:match value="2" name="question" property="questionType">
+									多选题
+								</logic:match>
+							</td>
+						</tr>
+						<tr>
+							<td>题目内容</td>
+							<td colspan="5">
+								<html:textarea property="contentStr" styleClass="texta2" value="${question.content}" readonly="true"/>
+							</td>
+						</tr>
+						<tr>
+							<td>题目答案</td>
+							<td colspan="3">
+								<html:textarea property="answer" styleClass="texta2" value="${question.answer}" readonly="true"/>
+							</td>
+						</tr>
+					</table>
+					<div>
+					<table id="table1">
+						<logic:present name="optionList">
+							<logic:notEmpty name="optionList">
+							<tr>
+								<td align="center" colspan="4">已有题目选项</td>
+							</tr>
+								<div id="op">
+								<logic:iterate id="option" name="optionList" indexId="index">
+									<tr>
+										<td width="5%">选项编码</td>
+									  <td><html:text property="optionCode" name="option" size="1" readonly="true"></html:text></td>
+										<td width="5%">选项内容</td>
+										<td width="80%"><html:text property="content" name="option" size="140" styleId="option${index+1 }" onblur="addData(this.value,${index+1 })"></html:text>
+											<input type="button" onclick="updateOption(${option.optionId },'${option.optionCode }')" value="修改"/>
+											<input type="button" onclick="deleteOption(${option.optionId },${questionId },'${option.optionCode }')" value="删除"/>
+										</td>
+									</tr>
+								</logic:iterate>
+								</div>
+							</logic:notEmpty>
+						</logic:present>
+						<logic:empty name="optionList">
+							<tr><td align="center" colspan="4"><font color="red">此题无选项</font></td></tr>
+						</logic:empty>
+					</table>
+		            <table id="option">
+			            <tr>
+			            	<td class="tdbg1" colspan="6" align="right"><input type="button" value="添加题目选项" onclick="add()"/>(在已有选项的基础上继续添加)</td>
+			            </tr>
+			            <tr>
+			            	<td width="5%" align="center">选项类型</td>
+		            		<td width="7%">
+								<html:select property="questionType" name="question">
+			            			<html:option value="1">单选题</html:option>
+								    <html:option value="2">多选题</html:option>
+			            		</html:select>
+							</td>
+		            	</tr>
+		            	<tr id="a1">
+		            		<td width="5%" align="center">选项编码</td>
+		            		<td width="5%">
+		            			<select name="codes" id="str1">
+			            			
+			            		</select>
+		            		</td>
+		            		<td width="5%">选项内容</td>
+		            		<td><input name="contents" size="140"></td>
+		            		<td width="5%"><input type="button" value="删除" onclick="deleterow()"/></td>
+		            	</tr>
+					</table>
+					<table>
+			            <tr>
+							<td colspan="3">
+								<html:hidden property="questionId" value="${question.questionId}" />
+								<html:hidden property="types" value="${question.questionType}" />
+								<html:submit value="增加选项" styleClass="btn" />
+								<input type="button" name="backUp" id="backUp" value="返回"
+									class="btn" style="margin-left: 40px"
+									onclick="window.location.href='questionList.do'" />
+							</td>
+						</tr>
+					</table>
+				</div>
+				</logic:present>
+			</html:form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style type="text/css">
+<!--
+ *{
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size: 12px;
+	vertical-align:middle;   /* 行内元素的居中设置 */
+}
+
+img{
+	 border:0px;
+}
+
+.hr_list th , .hr_list td{
+   border:1px solid #C0D198;	
+}
+
+
+a:link {
+	color: #06482a;
+	text-decoration: none;
+
+}
+a:visited {
+	color: #06482a;
+	text-decoration: none;
+}
+a:hover {
+	color: #FF0000;
+	text-decoration: underline;
+}
+a:active {
+	color: #FF0000;
+	text-decoration: none;
+}
+
+.list_left{
+	background:url("../images/tab_12.gif") repeat-y;
+	position:relative;
+	width:9px;
+}
+.list_right{
+	background:url("../images/tab_16.gif") repeat-y;
+	position:relative;
+	width:9px;
+}
+
+.top_line{
+	 height:30px;
+	 width:100%;
+	 background:url("../images/tab_05.gif");
+}
+
+.list_title{
+	 height:30px;
+   font-size: 12px;
+	 color: #1F4A65;
+	 font-weight: bold;	
+	 float:left;
+	 line-height:30px;
+}
+
+.clear_float{
+   clear:both;
+}
+
+.list_title img{
+   margin-left:19px;	
+}
+
+.ctrl_option img{
+   margin-right:10px;
+}
+
+.ctrl_option{
+   float:right;	
+   margin-right:15px;
+}
+
+.ctrl_option li{
+   float:left;	
+   width:60px;
+   list-style:none;
+   line-height:30px;
+}
+.main_table{
+   text-align:center;	
+   width:100%;
+   table-layout:fixed;         /*  均匀非配表格  */
+   border-collapse:collapse;  /* 去除表格中所有的空隙 */
+}
+
+.main_table img{
+   margin-right:10px;
+}
+
+table{
+	border-collapse:collapse;  /* 去除表格中所有的空隙 */
+	
+}
+
+.main_table th{
+	 height:24px;
+	 background:url("../images/tab_14.gif") ;
+}
+
+.main_table td{
+	 background:white;
+	 height:18px;	
+}
+
+.change_page{
+   float:right;	
+   height:29px;
+   margin-right:15px;
+}
+
+.last_line{
+	height:29px;
+	line-height:29px;
+	background:url("../images/tab_21.gif");
+	vertical-align:middle;
+	width:100%;
+}
+
+.last_line p{
+	height:29px;
+	float:left;
+	padding-left:19px;
+}
+
+-->
+</style>
+
+
+<script>
+var  highlightcolor='#eafcd5';
+//此处clickcolor只能用win系统颜色代码才能成功,如果用#xxxxxx的代码就不行,还没搞清楚为什么:(
+var  clickcolor='#51b2f6';
+function  changeto(){
+source=event.srcElement;
+if  (source.tagName=="TR"||source.tagName=="TABLE")
+return;
+while(source.tagName!="TD")
+source=source.parentElement;
+source=source.parentElement;
+cs  =  source.children;
+//alert(cs.length);
+if  (cs[1].style.backgroundColor!=highlightcolor&&source.id!="nc"&&cs[1].style.backgroundColor!=clickcolor)
+for(i=0;i<cs.length;i++){
+	cs[i].style.backgroundColor=highlightcolor;
+}
+}
+
+function  changeback(){
+if  (event.fromElement.contains(event.toElement)||source.contains(event.toElement)||source.id=="nc")
+return
+if  (event.toElement!=source&&cs[1].style.backgroundColor!=clickcolor)
+//source.style.backgroundColor=originalcolor
+for(i=0;i<cs.length;i++){
+	cs[i].style.backgroundColor="";
+}
+}
+
+function  clickto(){
+source=event.srcElement;
+if  (source.tagName=="TR"||source.tagName=="TABLE")
+return;
+while(source.tagName!="TD")
+source=source.parentElement;
+source=source.parentElement;
+cs  =  source.children;
+//alert(cs.length);
+if  (cs[1].style.backgroundColor!=clickcolor&&source.id!="nc")
+for(i=0;i<cs.length;i++){
+	cs[i].style.backgroundColor=clickcolor;
+}
+else
+for(i=0;i<cs.length;i++){
+	cs[i].style.backgroundColor="";
+}
+}
+</script>
+
+
+
+<style>
+.time { font-size: 35pt; line-height: 44pt; color:red;}
+</style>
+<SCRIPT language=JavaScript>
+<!-- Hiding
+var ctimer;
+
+function init(){
+if (document.all){
+tim2.style.left=tim1.style.posLeft;
+tim2.style.top=tim1.style.posTop+tim1.offsetHeight-6;
+settimes();
+}
+}
+
+function settimes(){
+var time= new Date();
+hours= time.getHours();
+mins= time.getMinutes();
+secs= time.getSeconds();
+if (hours<10)
+hours="0"+hours;
+if(mins<10)
+mins="0"+mins;
+if (secs<10)
+secs="0"+secs;
+tim1.innerHTML=hours+":"+mins+":"+secs
+tim2.innerHTML=hours+":"+mins+":"+secs
+ctimer=setTimeout('settimes()',960);
+}
+// Done hiding -->
+</SCRIPT>
+
+
+
+</head>
+
+<body bgcolor="#fef4d9" onload="init()">
+<DIV class=time id=tim1 
+style="HEIGHT: 20px; LEFT: 473px; POSITION: absolute; TOP: 94px; WIDTH: 111px"></DIV>
+<DIV class=time id=tim2 
+style="FILTER: flipv() alpha(opacity=20); FONT-STYLE: italic; POSITION: absolute"></DIV>
+<!-- hr项目中列表的标准 -->
+	 <table width="100%" height="133">
+<tr>
+	 	  		<td width="9" height="123" class="list_left" >&nbsp;</td>
+<td width="*">
+							 <div class="hr_list">
+							 	  <!-- 列表的第一行，包括标题，一些选项如 全选、新增、修改、删除 -->
+<div class="top_line">
+							 	     	<!-- 列表的标题 -->
+							 	     	<h1 class="list_title"> 当前位置：管理首页 &gt;考勤管理 &gt;签到签退</h1>
+							 	     	<!-- 列表的操作选项 -->
+ 	  </div><!-- 列表的第一行结束 -->
+      <div>
+      </div>  <p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;
+<div align="center">	    <table> 	  <tr><th>
+                                                  
+                                                   
+					                                 <input type="button" class="btn" value="上班签到"
+						onclick="facade('check')" />
+					                                 &nbsp; &nbsp; </th><th>
+                        
+                     
+				
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" class="btn" value="下班签退"
+						onclick="facade('check')" /> 
+					</th>
+               
+			<p>&nbsp; </p>
+                    </tr>
+                    <tr><th colspan="2" align="center">
+                  <input type="button" value="返回" onClick="JScript:history.back()"/>
+                  </th>
+                  </tr>
+                   
+                   
+                    </table><p>&nbsp;<p>&nbsp;<p>&nbsp;
+	  </div>
+		  <div align="center">
+					
+	  </div>
+                                  
+<!-- 主列表 -->  
+							 	  <table width="99%"  onmouseover="changeto()"  onmouseout="changeback() " class="main_table">
+				 	  	       <colgroup>
+							 	  	  	 <col />
+							 	  	  	 <col colspan="5"/>
+						 	  		</colgroup>
+							 	  </table> 
+			 	  
+					 	    <!-- 列表的最后一行，包括分页信息 -->
+							 	<!-- hr_list结束 -->	
+<td width="10" class="list_right">&nbsp;</td>
+  	   <tr>
+</table>
+	 
+	 
+</body>
+</html>

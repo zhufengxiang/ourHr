@@ -1,0 +1,95 @@
+ <!--
+	 <table>
+    
+	 	  	<tr>
+	 	  		<td class="list_left" >
+	 	  		  <img src="../images/tab_03.gif" style="position:absolute;top:1px;left:0px;">	
+	 	  		   <img src="../images/tab_20.gif" style="position:absolute;bottom:1px;left:0px;">	 		  	
+	 	  		</td>
+		 	  	<td width="*">
+							 <div class="hr_list">
+							 	  <!-- 列表的第一行，包括标题，一些选项如 全选、新增、修改、删除 -->
+							 	  <div class="top_line">
+							 	     	<!-- 列表的标题 -->
+							 	     	<h1 class="list_title"><img src="../images/311.gif" >&nbsp;&nbsp;系统设置 >>用户管理>>未开通账户及冻结用户一览</h1>
+							 	     	<!-- 列表的操作选项 -->
+							 	     	<ul class="ctrl_option">
+							 	     	   <li><input type="checkbox" name="checkAll" value="checkAll" />全选</li>
+                                           
+							 	     	</ul>
+							 	  </div><!-- 列表的第一行结束 -->
+							 	     
+							 	  <div class="list_fun">						 	  	
+							 	  	  筛选数据： 
+							 	  	  
+							 	  	  状态：
+							 	  	  <select>
+							 	  	     <option value="1" />不可用
+							 	  	     <option value="2"/>未开通
+							 	  	  </select>
+							 	  	  
+							 	  	  部门:
+							 	  	  <select>
+							 	  	  	 <option value="1" />所有部门
+							 	  	     <option value="1" />人力资源部
+							 	  	     <option value="2" />销售部
+							 	  	     <option value="3" />财务部
+							 	  	  </select>
+							 	  	  
+							 	  	  是否管理者:
+							 	  	  <select>
+							 	  	     <option value="1" />所有
+							 	  	     <option value="2" />是
+							 	  	     <option value="3" />不是
+							 	  	  </select>
+							 	  	 
+							 	  	 <input class="button_style" type="submit" name="sort" value="筛选" />
+							 	  	  
+							 	  </div>   
+							 	     
+							 	 <!-- 主列表 -->  
+							 	  <table class="main_table"  onmouseover="changeto()"  onmouseout="changeback() ">
+							 	  	  <colgroup>
+							 	  	  	 <col />
+							 	  	  	 <col />
+							 	  	  	 <col colspan="7"/>
+							 	  		</colgroup>
+							 	      <thead background="../images/tab_14.gif"><th width="40">选择</th><th width="60">序号</th><th>真实姓名</th><th>部门</th><th>状态</th><th>是否管理者</th><th>操作</th></thead>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td><td>1</td><td>刘德华</td><td>人力资源部</td><td>不可用</td><td>是</td><td><img src="../images/002.gif"/><a href="#" onclick="confirm('确定开通吗')">开通</a><img src="../images/037.gif"/><a href="userAdd.html">分配账户</a></td></tr>
+									  <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td><td>2</td><td>张学友</td><td>人力资源部</td><td>不可用</td><td>是</td><td><img src="../images/002.gif"/><a href="#" onclick="confirm('确定开通吗')">开通</a><img src="../images/037.gif"/><a href="userAdd.html">分配账户</a></td></tr>
+									  <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td><td>3</td><td>黎明</td><td>人力资源部</td><td>不可用</td><td>是</td><td><img src="../images/002.gif"/><a href="#" onclick="confirm('确定开通吗')">开通</a><img src="../images/037.gif"/><a href="userAdd.html">分配账户</a></td></tr>
+							 	  </table> 
+							 	  
+							 	 <div class="list_fun">
+			 	           <form action="" method="post">
+							 	  	  <span>批量操作：</span>
+							 	  	  <input type="submit" name="auditing_submit" value="快速开通" class="button_style" >
+							 	  	  <span class="font_tip">备注：开通员工的用户名是他的真实姓名的英文缩写</span>
+							 	   <form>
+					  	   </div>
+			 	  
+							 	  <!-- 列表的最后一行，包括分页信息 -->
+							 	  <div class="list_fun">
+							 	  	  <span style="float:left;">共120条记录，当前第1/10页，每页10条记录</span>
+							 	  	  <div class="change_page">
+							 	  	  	   <a href="#"><img src="../images/first.gif" /></a>
+							 	  	  	   <a href="#"><img src="../images/back.gif" /></a>
+							 	  	  	   <a href="#"><img src="../images/next.gif" /></a>
+							 	  	  	   <a href="#"><img src="../images/first.gif" /></a>
+							 	  	  	   <span>跳转到</span>
+							 	  	  	   <input name="textfield" type="text" size="3" />
+							 	  	  	   &nbsp;&nbsp;<span>页</span>
+							 	  	  	   <a href="#"><img src="../images/go.gif" /></a>
+							 	  	  </div>
+							 	  </div>
+							 </div><!-- hr_list结束 -->	
+		 	  		   
+		 	  		   
+		 	  		
+		 	  	</td>
+	 	  	  <td class="list_right">
+	 	  	     <img src="../images/tab_07.gif" style="position:absolute;top:1px;right:2px;">	
+	 	  		   <img src="../images/tab_22.gif" style="position:absolute;bottom:1px;right:2px;">		
+	 	  	  </td>
+	 	  	 </tr>
+	 </table>

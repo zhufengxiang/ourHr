@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>管理员,部门主管日志列表</title>
+<link rel="stylesheet" type="text/css" href="../css/hr_standard.css" />
+<script type="text/javascript" src="../js/list_hover.js" > </script>
+<link href="../css/calendar.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+	//时间控件对IE的补丁
+	var ie =navigator.appName=="Microsoft Internet Explorer"?true:false;
+	function $(objID){
+		return document.getElementById(objID);
+	}
+</script>
+</head>
+
+
+<body>
+   <script type="text/javascript" src="../js/calendar.js"></script>  <!-- 时间控件要求此段JavaScript放在此 -->
+	 <!-- hr项目中列表的标准 -->
+	 <table>
+	 	  	<tr>
+	 	  		<td class="list_left" >
+	 	  		  <img src="../images/tab_03.gif" style="position:absolute;top:1px;left:0px;">	
+	 	  		   <img src="../images/tab_20.gif" style="position:absolute;bottom:1px;left:0px;">	 	  		</td>
+		 	  	<td width="*">
+							 <div class="hr_list">
+							 	  <!-- 列表的第一行，包括标题，一些选项如 全选、新增、修改、删除 -->
+							 	  <div class="top_line">
+							 	     	<!-- 列表的标题 -->
+							 	     	<h1 class="list_title"><img src="../images/311.gif" >&nbsp;&nbsp;系统设置 &gt;公共设置 &gt;公告管理</h1>
+				 	     	<!-- 列表的操作选项 -->
+							 	     	<ul class="ctrl_option">
+							 	     	   <li>
+						 	     	         <input type="checkbox" name="checkAll" value="checkAll" />
+						 	     	         全选</li>
+                                             <li style="width:80px;"><a href="noteAdd.html"><img src="../images/001.gif" alt=                                             "新增部门" width="14" height="14" />添加公告</a></li>
+						 	     	        <li><a href=""><img src="../images/083.gif" width="14" height="14" />删除</a></li>	
+							 	     	</ul>
+							 	  </div><!-- 列表的第一行结束 -->
+							 	     
+							 	  <div class="list_fun">						 	  	
+							 	  	  筛选数据： 
+							 	  	  
+							 	  	  起始时间：
+							 	  	  <input type="text" name="start_date" value="2009-1-1" size="14" readonly="readonly" onClick="showcalendar(event, this);" onFocus="showcalendar(event, this);if(this.value=='0000-00-00')this.value=''"  />
+							 	  	  截止时间：
+							 	  	  <input type="text" name="end_date" value="2009-1-1" size="14" readonly="readonly" onclick="showcalendar(event, this);" onfocus="showcalendar(event, this);if(this.value=='0000-00-00')this.value=''"  />
+						 	  	    <input class="button_style" type="submit" name="sort" value="筛选" />
+						 	  	    </div>   
+							 	     
+					 	    <!-- 主列表 -->  
+							 	  <table class="main_table"  onmouseover="changeto()"  onmouseout="changeback() ">
+							 	  	  <colgroup>
+							 	  	  	 <col />
+							 	  	  	 <col />
+							 	  	  	 <col colspan="5"/>
+							 	  		</colgroup>
+							 	      <thead background="../images/tab_14.gif"><tr><th width="44">选择</th><th width="65">序号</th>
+							 	      <th>公告标题</th>
+							 	      <th >发布人</th>
+							 	      <th >发布时间</th>
+							 	      <th >过期时间</th>
+							 	      <th >操作</th><td width="12"></thead>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td><td>1</td>
+							 	        <td><a href="">安全</a></td>
+							 	        
+							 	        <td>王彦</td><td>2009-12-7</td>
+						 	            <td>2009-12-7</td>
+					 	            <td><a href="#">修改</a> <a href="#">查看</a></td>
+							 	      </tr>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td><td>1</td>
+							 	        <td><a href="">安全</a></td>
+							 	        
+							 	        <td>王彦</td><td>2009-12-7</td>
+						 	            <td>2009-12-7</td>
+						 	            <td><a href="#">修改</a> <a href="#">查看</a></td>
+							 	      </tr>	
+							 	  </table> 
+
+			 	  
+							 	  <!-- 列表的最后一行，包括分页信息 -->
+							 	  <div class="list_fun">
+							 	  	  <span style="float:left;">共120条记录，当前第1/10页，每页10条记录</span>
+							 	  	  <div class="change_page">
+							 	  	  	   <a href="#"><img src="../images/first.gif" /></a>
+							 	  	  	   <a href="#"><img src="../images/back.gif" /></a>
+							 	  	  	   <a href="#"><img src="../images/next.gif" /></a>
+							 	  	  	   <a href="#"><img src="../images/first.gif" /></a>
+							 	  	  	   <span>跳转到</span>
+							 	  	  	   <input name="textfield" type="text" size="3" />
+							 	  	  	   &nbsp;&nbsp;<span>页</span>
+							 	  	  	   <a href="#"><img src="../images/go.gif" /></a>							 	  	  </div>
+							 	  </div>
+							 </div><!-- hr_list结束 -->		 	  	</td>
+	 	  	  <td class="list_right">
+	 	  	     <img src="../images/tab_07.gif" style="position:absolute;top:1px;right:2px;">	
+	 	  		   <img src="../images/tab_22.gif" style="position:absolute;bottom:1px;right:2px;">	 	  	  </td>
+	 	  	 </tr>
+	 </table>
+	 
+	
+	 
+	 
+</body>
+</html>
+

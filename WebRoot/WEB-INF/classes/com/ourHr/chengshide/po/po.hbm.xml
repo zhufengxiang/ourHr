@@ -3,26 +3,16 @@
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
  
-<hibernate-mapping package="com.anping.po">
+<hibernate-mapping package="com.ourHr.chengshide.po">
 <!--  这是一张部门表  它的外键就是自己  主键为id-->
-    <class name="Depart" table="Depart">
+    <class name="Department" table="Department">
     <!-- id  是指定 -->
-		<id name="id"    type="integer" >
-			<generator class="native"/>
-	  </id>
-		<property name="text" not-null="true"  length="30" /><!-- 功能名 -->
-		<property name="leaf" not-null="true"/>  <!--  在ext中显示是不是叶子-->
-		<property name="checked" not-null="true"/> <!--  在ext 中是否被选中-->
-		<property name="expandable" not-null="true"/>  <!--  是否可以展开-->
-		<property name="expanded" not-null="true"/><!--  是否展开-->
-		 	<property name="url"    length="40" /><!--  面板说在的地址-->
-		 	<property name="sort"  /><!--  主菜单排序-->
-  	<set name="children"  inverse="true"     cascade="all"  >   
-  	     <key  column="pid"    ></key>   
-     <one-to-many class="Depart" /> 
-       </set>     
- 	     <many-to-one name="parent" class="Depart"    column="pid"   cascade="all"/>    
-	        
+			<id name="id"    type="integer"  >
+	 <generator class="sequence">
+        <param name="sequence">depart_id_sequence</param>
+     </generator>
+       </id>
+	 	        
  	</class>
 	   
 

@@ -33,6 +33,10 @@
   <property name="mappingResources">
   <list>
     <value>com/anping/po/po.hbm.xml</value>
+    <value>com/ourHr/chengshide/po/po.hbm.xml</value>
+    <value>com/ourHr/wuliang/po/po.hbm.xml</value>
+    <value>com/ourHr/hehui/po/po.hbm.xml</value>
+  
   </list>
   </property>
 <!--   <property name="packagesToScan" value="com.anping.po"/> -->

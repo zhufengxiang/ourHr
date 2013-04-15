@@ -21,4 +21,5 @@ public class QueryResult<T> {
 	public void setTotalCount(long totalCount) {
 		this.totalCount = totalCount;
 	}
+	 
 }

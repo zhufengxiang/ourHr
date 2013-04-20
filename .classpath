@@ -21,7 +21,6 @@
 	<classpathentry kind="lib" path="jar/json-lib-2.3-jdk15.jar"/>
 	<classpathentry kind="lib" path="jar/jta-1.1.jar"/>
 	<classpathentry kind="lib" path="jar/ognl-3.0.5.jar"/>
-	<classpathentry kind="lib" path="jar/ojdbc6.jar"/>
 	<classpathentry kind="lib" path="jar/org.springframework.aop-3.1.0.RC1.jar"/>
 	<classpathentry kind="lib" path="jar/org.springframework.asm-3.1.0.RC1.jar"/>
 	<classpathentry kind="lib" path="jar/org.springframework.aspects-3.1.0.RC1.jar"/>
@@ -49,7 +48,7 @@
 	<classpathentry kind="lib" path="jar/struts2-junit-plugin-2.3.7.jar"/>
 	<classpathentry kind="lib" path="jar/struts2-spring-plugin-2.3.4.jar"/>
 	<classpathentry kind="lib" path="jar/xwork-core-2.3.4.jar"/>
-	<classpathentry kind="lib" path="D:/编程工具包/mysql-connector-java-5.1.13-bin.jar"/>
+	<classpathentry kind="lib" path="jar/mysql-connector-java-5.1.13-bin.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>

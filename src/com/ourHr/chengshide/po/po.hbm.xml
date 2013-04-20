@@ -8,8 +8,8 @@
     <class name="Department" table="Department">
     <!-- id  是指定 -->
 			<id name="id"    type="integer"  >
-	 <generator class="sequence">
-        <param name="sequence">depart_id_sequence</param>
+	 <generator class="native">
+        
      </generator>
        </id>
 	 	        

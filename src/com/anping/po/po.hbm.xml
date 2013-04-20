@@ -8,8 +8,8 @@
     <class name="Depart" table="Depart">
     <!-- id  是指定 -->
 	<id name="id"    type="integer"  >
-	 <generator class="sequence">
-        <param name="sequence">depart_id_sequence</param>
+	 <generator class="native">
+      
      </generator>
        </id>
 		<property name="text" not-null="true" type="string" length="30" /><!-- 功能名 -->
@@ -31,9 +31,9 @@
   <class name="Resume" table="t_ourHr_resume">
     <!--  --> 
     <id  name="id" type="integer">
-     <generator class="sequence">
-        <param name="sequence">resume_id_sequence</param>
-        </generator>
+  	 <generator class="native">
+      
+     </generator>
      </id> 
     <property name="state" type="integer"></property><!-- 简历的状态 --> 
    	<property name="releaseTime" type="date"></property><!--简历发布的时间  -->
@@ -70,9 +70,9 @@
    <class name="Audition" table="t_ourHr_audition">
    <!-- id -->
 	   <id type="integer">
-	   <generator class="sequence">
-	    <param name="sequence">audition_id_sequence</param>
-	       </generator>
+	 	 <generator class="native">
+      
+     </generator>
 	   </id> 
 	   <!--关联的简历  --> 
   <many-to-one name="resume" class="com.anping.po.Resume" column="rid" unique="true" cascade="all"/>
@@ -92,9 +92,9 @@
    <class name="AuditionRecord" table="t_ourHr_auditionRecord">
    <!-- id -->
 	   <id type="integer">
-	   <generator class="sequence">
-	    <param name="sequence">auditionRecord_id_sequence</param>
-	       </generator>
+	 	 <generator class="native">
+      
+     </generator>
 	   </id> 
 	   <!--关联的简历  --> 
   <many-to-one name="resume" class="com.anping.po.Resume" column="rid" unique="true" cascade="all"/>
@@ -124,8 +124,8 @@
    
    <class name="Leave" table="t_ourHr_leave">
    	<id name="id"    type="integer"  >
-	 <generator class="sequence">
-        <param name="sequence">leave_id_sequence</param>
+		 <generator class="native">
+      
      </generator>
        </id>
         <many-to-one name="record" class="com.ourHr.hehui.po.Record" cascade="all" column="rid" ></many-to-one>

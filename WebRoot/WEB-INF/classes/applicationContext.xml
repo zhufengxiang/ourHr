@@ -19,10 +19,10 @@
  
  <!--  数据库的链接-->
   <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-    <property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
-    <property name="url" value="jdbc:oracle:thin:@127.0.0.1:1523:ORCL"/>
-    <property name="username" value="scott"/>
-    <property name="password" value="tiger"/>
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    <property name="url" value="jdbc:mysql://localhost:3306/ourHr"/>
+    <property name="username" value="root"/>
+    <property name="password" value="root"/>
   </bean>
   
   <!--  session工厂的配置  没有使用注解板-->
@@ -32,24 +32,22 @@
     
   <property name="mappingResources">
   <list>
-    <value>com/anping/po/po.hbm.xml</value>
+     <value>com/anping/po/po.hbm.xml</value>
     <value>com/ourHr/chengshide/po/po.hbm.xml</value>
     <value>com/ourHr/wuliang/po/po.hbm.xml</value>
     <value>com/ourHr/hehui/po/po.hbm.xml</value>
-  
+    <value>com/ourHr/shaotingting/po/po.hbm.xml</value>
   </list>
   </property>
 <!--   <property name="packagesToScan" value="com.anping.po"/> -->
-  <property name="hibernateProperties">
-    <props>
-  <prop key="hibernate.format_sql">true</prop>
-    <prop key="hibernate.hbm2ddl.auto">update</prop>
-    <prop key="hibernate.show_sql">true</prop>
- 
-       	<prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop>
+   <property name="hibernateProperties">
+                  <props>
+                     <prop key="hibernate.format_sql">true</prop>
+                     <prop key="hibernate.hbm2ddl.auto">update</prop>
+                     <prop key="hibernate.show_sql">true</prop> 
+       	             <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
         
- </props>
-  
+                  </props> 
   </property>
 </bean>
 

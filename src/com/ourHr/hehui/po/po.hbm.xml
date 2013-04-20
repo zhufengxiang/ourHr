@@ -8,8 +8,8 @@
     <class name="Record" table="t_ourHr_record">
     <!-- id  是指定 -->
 	<id name="id"    type="integer"  >
-	 <generator class="sequence">
-        <param name="sequence">record_id_sequence</param>
+	 <generator class="native">
+        
      </generator>
        </id>
     </class>

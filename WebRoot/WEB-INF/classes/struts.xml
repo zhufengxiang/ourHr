@@ -5,20 +5,20 @@
 
 <struts>
 
-    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
-    <!--  动态调用-->
-    <constant name="struts.devMode" value="true" />
-    <!--  开发者模式-->
-   <constant name="struts.i18n.encoding" value="UTF-8" /> 
-   <!--  utf-8-->
-     <package name="User" namespace="/User" extends="struts-default">
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<!-- 动态调用 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 开发者模式 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- utf-8 -->
+	<package name="User" namespace="/User" extends="struts-default">
 
-        <action name="User" class="com.anping.action.UserAction"  >
-            <result>HelloWorld.jsp</result>
-        </action>
-         </package>
-      
-    <!-- Add packages here -->
- 
-<include file="struts_anping.xml"></include> 
+		<action name="User" class="com.anping.action.UserAction">
+			<result>HelloWorld.jsp</result>
+		</action>
+	</package>
+
+	<!-- Add packages here -->
+
+	<include file="struts_anping.xml"></include>
 </struts>

@@ -31,13 +31,12 @@
   <property name="dataSource" ref="dataSource" />
     
   <property name="mappingResources">
-  <list>
+   <list>
     <value>com/anping/po/po.hbm.xml</value>
     <value>com/ourHr/chengshide/po/po.hbm.xml</value>
     <value>com/ourHr/wuliang/po/po.hbm.xml</value>
     <value>com/ourHr/hehui/po/po.hbm.xml</value>
-  
-  </list>
+   </list>
   </property>
 <!--   <property name="packagesToScan" value="com.anping.po"/> -->
   <property name="hibernateProperties">
@@ -58,7 +57,5 @@
 			  <property name="dataSource" ref="dataSource"/>
 			  <property name="sessionFactory" ref="sessionFactory"></property>
 		</bean>
-
  
-     
 </beans>

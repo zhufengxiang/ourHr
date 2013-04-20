@@ -5,16 +5,16 @@
 
 <struts>
 
-    <package name="Depart" namespace="/Depart" extends="struts-default">
+	<package name="Depart" namespace="/Depart" extends="struts-default">
 
-        <action name="Depart" class="com.anping.action.DepartAction">
-            <result>/left.jsp</result>
-        </action>
+		<action name="Depart" class="com.anping.action.DepartAction">
+			<result>/left.jsp</result>
+		</action>
 
-  
 
- 
 
-        <!-- Add actions here -->
-    </package>
+
+
+		<!-- Add actions here -->
+	</package>
 </struts>

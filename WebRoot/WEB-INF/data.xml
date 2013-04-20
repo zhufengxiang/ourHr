@@ -1,179 +1,237 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-<!--  在此处添加的是左边的模块  -->
- 
-   <Departs>
-          <depart    text="系统设置"  leaf="0" checked="0" expanded="0" expandable="1"   sort="1">
-            </depart>
-             <depart  text="招聘管理"  leaf="0" checked="0" expanded="0" expandable="1"   sort="2">
-           　</depart>
-             <depart text="档案管理"  leaf="0" checked="0" expanded="0" expandable="1"  sort="3">
-            　</depart>
-            <depart text="薪酬管理"  leaf="0" checked="0" expanded="0" expandable="1" sort="4">
-           　</depart>
-             <depart text="激励管理"  leaf="0" checked="0" expanded="0" expandable="1" sort="5">
-                  </depart>
-            <depart text="培训管理"  leaf="0" checked="0" expanded="0" expandable="1"  sort="6">
-           　</depart >
-            <depart text="人员调动"  leaf="0" checked="0" expanded="0" expandable="1" sort="7">
-    　　　</depart>
-            <depart text="绩效考核"  leaf="0" checked="0" expanded="0" expandable="1" sort="8">
-          　 </depart>
-            <depart text="考勤管理"  leaf="0" checked="0" expanded="0" expandable="1" sort="9">
-          　 </depart >
-           <depart text="数据报表"  leaf="0" checked="0" expanded="0" expandable="1" sort="10">
-                  </depart>
-         </Departs>
-         
-         
-         
-         
-      <!-- 孩子 -->
-       <depart-childs >
-           <!--  系统设置下的孩子-->
-                  <child text="人员管理"  leaf="1" checked="0" expanded="0" expandable="1" parent="系统设置" url="system/UserList.html">
-             			 </child>
-              		  <child text="角色管理"  leaf="1" checked="0" expanded="0" expandable="1" parent="系统设置"  url="system/RoleList.html">
-             			   </child> 
-              		 <child text="模块管理"  leaf="1" checked="0" expanded="0" expandable="1" parent="系统设置" url="system/moudelList.html">
-                           </child> 
-              		  <child text="部门管理"  leaf="1" checked="0" expanded="0" expandable="1" parent="系统设置" url="system/DepartmentList.html">
-               		      </child> 
-              		 <child text="职位设置"  leaf="1" checked="0" expanded="0" expandable="1" parent="系统设置" url="system/positionList.html">
-             			 
-              		 </child> 
-              		 <child text="题库管理"  leaf="1" checked="0" expanded="0" expandable="1" parent="系统设置" url="system/QuestionList.html">
-             			   
-              		 </child> 
-              		  <child text="其他设置"  leaf="1" checked="0" expanded="0" expandable="1" parent="系统设置" url="system/logList.html">
-             			  
-              		 </child> 
-              		 <child text="公告管理"  leaf="1" checked="0" expanded="0" expandable="1" parent="系统设置" url="system/noteList.html">
-             			 
-              		 </child> 
-           
-                <!--  招聘管理下的孩子-->
-          
-                          <child text="职位发布管理"  leaf="1" checked="0" expanded="0" expandable="1" parent="招聘管理" url="invite/positionList.html">
-             			 
-              		       </child> 
-              		         <child text="简历管理"  leaf="1" checked="0" expanded="0" expandable="1" parent="招聘管理" url="invite/newResumeList2.html">
-             			  
-              		       </child> 
-              		        <child text="简历筛选"  leaf="1" checked="0" expanded="0" expandable="1" parent="招聘管理" url="invite/newResumeList.html">
-             			   
-              		       </child> 
-              		        <child text="面试记录录入"  leaf="1" checked="0" expanded="0" expandable="1" parent="招聘管理" url="invite/interviewResumeList2.html">
-             			 
-              		       </child> 
-              		       <child text="面试记录管理"  leaf="1" checked="0" expanded="0" expandable="1" parent="招聘管理" url="invite/interviewList.html">
-             			  
-              		       </child> 
-              		         <child text="面试记录审核"  leaf="1" checked="0" expanded="0" expandable="1" parent="招聘管理" url="invite/interviewResumeList.html">
-             			  
-              		       </child> 
-              		        <child text="应聘考试"  leaf="1" checked="0" expanded="0" expandable="1" parent="招聘管理" url="invite/examOnline.html">
-             			 
-              		       </child> 
-              		        <child text="试卷批改"  leaf="1" checked="0" expanded="0" expandable="1" parent="招聘管理" url="invite/interviewResumeList4.html">
-             			    
-              		       </child> 
-              		        <child text="试卷管理"  leaf="1" checked="0" expanded="0" expandable="1" parent="招聘管理" url="invite/examList.html">
-             			 
-              		       </child> 
-              		        <child text="试卷审核"  leaf="1" checked="0" expanded="0" expandable="1" parent="招聘管理" url="invite/interviewResumeList3.html">
-             		 
-              		       </child> 
-              		       <child text="录用管理"  leaf="1" checked="0" expanded="0" expandable="1" parent="档案管理" url="invite/resumeList.html">
-             		 
-              		       </child>
-              		       <child text="录入档案"  leaf="1" checked="0" expanded="0" expandable="1" parent="档案管理" url="archive/archiveAdd.html">
-             		 
-              		       </child> 
-              		  <child text="导入档案"  leaf="1" checked="0" expanded="0" expandable="1" parent="档案管理" url="archive/newResumeList.html">
-             		 
-              		       </child> 
-              		       <child text="全部档案"  leaf="1" checked="0" expanded="0" expandable="1" parent="档案管理" url="archive/archiveList.html">
-             		 
-              		       </child> 
-              		       <child text="审核档案"  leaf="1" checked="0" expanded="0" expandable="1" parent="档案管理" url="archive/archiveCheckList.html">
-             		 
-              		       </child> 
-              		       <child text="档案回收"  leaf="1" checked="0" expanded="0" expandable="1" parent="档案管理" url="archive/archiveDelList.html">
-             		 
-              		       </child> 
-              		       <child text="档案记录"  leaf="1" checked="0" expanded="0" expandable="1" parent="档案管理" url="archive/archiveChangeList.html">
-             		 
-              		       </child> 
-              		       <child text="薪酬标准"  leaf="1" checked="0" expanded="0" expandable="1" parent="薪酬管理" url="salary/salaryStandardList.html">
-             		 
-              		       </child>   
-              		        <child text="添加标准"  leaf="1" checked="0" expanded="0" expandable="1" parent="薪酬管理" url="salary/salaryStandardAll.html">
-             	      	 </child>
-             	   	  <child text="标准审核"  leaf="1" checked="0" expanded="0" expandable="1" parent="薪酬管理" url="salary/salaryStandardCheckList.html">
-             		 
-              		       </child>   
-              		        <child text="生成报表"  leaf="1" checked="0" expanded="0" expandable="1" parent="薪酬管理" url="salary/makeReportDetail.html">
-             		 
-              		       </child>   
-              		        <child text="审核报表"  leaf="1" checked="0" expanded="0" expandable="1" parent="薪酬管理" url="salary/newReportList.html">
-             		 
-              		       </child>   
-              		        <child text="个人薪酬"  leaf="1" checked="0" expanded="0" expandable="1" parent="薪酬管理" url="salary/personalSalaryList.html">
-             		 
-              		       </child>   
-              		        <child text="薪酬详情"  leaf="1" checked="0" expanded="0" expandable="1" parent="薪酬管理" url="salary/personalSalaryDetail.html">
-             		 
-              		       </child>   
-              		        <child text="激励查看"  leaf="1" checked="0" expanded="0" expandable="1" parent="激励管理" url="bestir/bestir_manage.html">
-             		 
-              		       </child>   
-                       <child text="激励审核"  leaf="1" checked="0" expanded="0" expandable="1" parent="激励管理" url="bestir/bestir_auditing.html">
-             		 
-              		       </child>   
-                   <child text="培训查看"  leaf="1" checked="0" expanded="0" expandable="1" parent="培训管理" url="training/showTraining.html">
-             		 
-              		       </child>   
-                  <child text="审核管理"  leaf="1" checked="0" expanded="0" expandable="1" parent="培训管理" url="training/checkTraining.html">
-             		 
-              		       </child>   
-                    <child text="增加调动"  leaf="1" checked="0" expanded="0" expandable="1" parent="人员调动" url="perferment/prefermentList.html">
-             		 
-              		       </child>   
-                      <child text="审核调动"  leaf="1" checked="0" expanded="0" expandable="1" parent="人员调动" url="perferment/prefermentCheckStatus.html">
-             		 
-              		       </child>   
-              		        <child text="考核管理"  leaf="1" checked="0" expanded="0" expandable="1" parent="绩效考核" url="meritRating/showModel.html">
-             		 
-              		       </child> 
-              		              <child text="查看考核"  leaf="1" checked="0" expanded="0" expandable="1" parent="绩效考核" url="meritRating/findmeritRating.html">
-             		 
-              		       </child>   
-              		              <child text="增加模版"  leaf="1" checked="0" expanded="0" expandable="1" parent="绩效考核" url="meritRating/addModel.html">
-             		 
-              		       </child>   
-              		              <child text="审核模版"  leaf="1" checked="0" expanded="0" expandable="1" parent="绩效考核" url="meritRating/MeritRatingModel.html">
-             		 
-              		       </child>   
-              		              <child text="审核考核"  leaf="1" checked="0" expanded="0" expandable="1" parent="绩效考核" url="meritRating/meritRating.html">
-             		 
-              		       </child>     
-              		        <child text="签到签退"  leaf="1" checked="0" expanded="0" expandable="1" parent="考勤管理" url="attend/attend_sign.html">
-             		 
-              		       </child>     
-              		       <child text="考勤管理"  leaf="1" checked="0" expanded="0" expandable="1" parent="考勤管理" url="attend/attend_manage.html">
-             		 
-              		       </child>     
-              		       <child text="人员统计"  leaf="1" checked="0" expanded="0" expandable="1" parent="数据报表" url="statistics/humancount.html">
-             		 
-              		       </child>     
-              		       <child text="资源统计"  leaf="1" checked="0" expanded="0" expandable="1" parent="数据报表" url="statistics/salarycount.html">
-             		 
-              		       </child>     
-              		       <child text="出勤统计"  leaf="1" checked="0" expanded="0" expandable="1" parent="数据报表" url="statistics/attendancereport.html">
-             		 
-              		       </child>     
-             
-             </depart-childs>
-      
+	<!-- 在此处添加的是左边的模块 -->
+
+	<Departs>
+		<depart text="系统设置" leaf="0" checked="0" expanded="0"
+			expandable="1" sort="1">
+		</depart>
+		<depart text="招聘管理" leaf="0" checked="0" expanded="0"
+			expandable="1" sort="2">
+		</depart>
+		<depart text="档案管理" leaf="0" checked="0" expanded="0"
+			expandable="1" sort="3">
+		</depart>
+		<depart text="薪酬管理" leaf="0" checked="0" expanded="0"
+			expandable="1" sort="4">
+		</depart>
+		<depart text="激励管理" leaf="0" checked="0" expanded="0"
+			expandable="1" sort="5">
+		</depart>
+		<depart text="培训管理" leaf="0" checked="0" expanded="0"
+			expandable="1" sort="6">
+		</depart>
+		<depart text="人员调动" leaf="0" checked="0" expanded="0"
+			expandable="1" sort="7">
+		</depart>
+		<depart text="绩效考核" leaf="0" checked="0" expanded="0"
+			expandable="1" sort="8">
+		</depart>
+		<depart text="考勤管理" leaf="0" checked="0" expanded="0"
+			expandable="1" sort="9">
+		</depart>
+		<depart text="数据报表" leaf="0" checked="0" expanded="0"
+			expandable="1" sort="10">
+		</depart>
+	</Departs>
+
+
+
+
+	<!-- 孩子 -->
+	<depart-childs>
+		<!-- 系统设置下的孩子 -->
+		<child text="人员管理" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="系统设置" url="system/UserList.html">
+		</child>
+		<child text="角色管理" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="系统设置" url="system/RoleList.html">
+		</child>
+		<child text="模块管理" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="系统设置" url="system/moudelList.html">
+		</child>
+		<child text="部门管理" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="系统设置" url="system/DepartmentList.html">
+		</child>
+		<child text="职位设置" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="系统设置" url="system/positionList.html">
+
+		</child>
+		<child text="题库管理" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="系统设置" url="system/QuestionList.html">
+
+		</child>
+		<child text="其他设置" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="系统设置" url="system/logList.html">
+
+		</child>
+		<child text="公告管理" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="系统设置" url="system/noteList.html">
+
+		</child>
+
+		<!-- 招聘管理下的孩子 -->
+
+		<child text="职位发布管理" leaf="1" checked="0" expanded="0"
+			expandable="1" parent="招聘管理" url="invite/positionList.html">
+
+		</child>
+		<child text="简历管理" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="招聘管理" url="invite/newResumeList2.html">
+
+		</child>
+		<child text="简历筛选" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="招聘管理" url="invite/newResumeList.html">
+
+		</child>
+		<child text="面试记录录入" leaf="1" checked="0" expanded="0"
+			expandable="1" parent="招聘管理" url="invite/interviewResumeList2.html">
+
+		</child>
+		<child text="面试记录管理" leaf="1" checked="0" expanded="0"
+			expandable="1" parent="招聘管理" url="invite/interviewList.html">
+
+		</child>
+		<child text="面试记录审核" leaf="1" checked="0" expanded="0"
+			expandable="1" parent="招聘管理" url="invite/interviewResumeList.html">
+
+		</child>
+		<child text="应聘考试" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="招聘管理" url="invite/examOnline.html">
+
+		</child>
+		<child text="试卷批改" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="招聘管理" url="invite/interviewResumeList4.html">
+
+		</child>
+		<child text="试卷管理" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="招聘管理" url="invite/examList.html">
+
+		</child>
+		<child text="试卷审核" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="招聘管理" url="invite/interviewResumeList3.html">
+
+		</child>
+		<child text="录用管理" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="档案管理" url="invite/resumeList.html">
+
+		</child>
+		<child text="录入档案" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="档案管理" url="archive/archiveAdd.html">
+
+		</child>
+		<child text="导入档案" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="档案管理" url="archive/newResumeList.html">
+
+		</child>
+		<child text="全部档案" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="档案管理" url="archive/archiveList.html">
+
+		</child>
+		<child text="审核档案" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="档案管理" url="archive/archiveCheckList.html">
+
+		</child>
+		<child text="档案回收" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="档案管理" url="archive/archiveDelList.html">
+
+		</child>
+		<child text="档案记录" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="档案管理" url="archive/archiveChangeList.html">
+
+		</child>
+		<child text="薪酬标准" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="薪酬管理" url="salary/salaryStandardList.html">
+
+		</child>
+		<child text="添加标准" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="薪酬管理" url="salary/salaryStandardAll.html">
+		</child>
+		<child text="标准审核" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="薪酬管理" url="salary/salaryStandardCheckList.html">
+
+		</child>
+		<child text="生成报表" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="薪酬管理" url="salary/makeReportDetail.html">
+
+		</child>
+		<child text="审核报表" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="薪酬管理" url="salary/newReportList.html">
+
+		</child>
+		<child text="个人薪酬" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="薪酬管理" url="salary/personalSalaryList.html">
+
+		</child>
+		<child text="薪酬详情" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="薪酬管理" url="salary/personalSalaryDetail.html">
+
+		</child>
+		<child text="激励查看" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="激励管理" url="bestir/bestir_manage.html">
+
+		</child>
+		<child text="激励审核" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="激励管理" url="bestir/bestir_auditing.html">
+
+		</child>
+		<child text="培训查看" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="培训管理" url="training/showTraining.html">
+
+		</child>
+		<child text="审核管理" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="培训管理" url="training/checkTraining.html">
+
+		</child>
+		<child text="增加调动" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="人员调动" url="perferment/prefermentList.html">
+
+		</child>
+		<child text="审核调动" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="人员调动" url="perferment/prefermentCheckStatus.html">
+
+		</child>
+		<child text="考核管理" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="绩效考核" url="meritRating/showModel.html">
+
+		</child>
+		<child text="查看考核" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="绩效考核" url="meritRating/findmeritRating.html">
+
+		</child>
+		<child text="增加模版" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="绩效考核" url="meritRating/addModel.html">
+
+		</child>
+		<child text="审核模版" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="绩效考核" url="meritRating/MeritRatingModel.html">
+
+		</child>
+		<child text="审核考核" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="绩效考核" url="meritRating/meritRating.html">
+
+		</child>
+		<child text="签到签退" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="考勤管理" url="attend/attend_sign.html">
+
+		</child>
+		<child text="考勤管理" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="考勤管理" url="attend/attend_manage.html">
+
+		</child>
+		<child text="人员统计" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="数据报表" url="statistics/humancount.html">
+
+		</child>
+		<child text="资源统计" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="数据报表" url="statistics/salarycount.html">
+
+		</child>
+		<child text="出勤统计" leaf="1" checked="0" expanded="0" expandable="1"
+			parent="数据报表" url="statistics/attendancereport.html">
+
+		</child>
+
+	</depart-childs>
+
 </root>

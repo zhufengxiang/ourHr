@@ -49,6 +49,7 @@
 	<classpathentry kind="lib" path="jar/struts2-junit-plugin-2.3.7.jar"/>
 	<classpathentry kind="lib" path="jar/struts2-spring-plugin-2.3.4.jar"/>
 	<classpathentry kind="lib" path="jar/xwork-core-2.3.4.jar"/>
+	<classpathentry kind="lib" path="D:/编程工具包/mysql-connector-java-5.1.13-bin.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>

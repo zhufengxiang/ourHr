@@ -1,15 +1,18 @@
 package hbmUtil;
 
-import org.apache.commons.dbcp.BasicDataSource;
+ 
+import java.sql.SQLException;
 
-import Utils.CheckEntity;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.anping.po.Depart;
+import com.mysql.jdbc.Driver;
 
  
 
 public class Test {
-    public static void main(String args[]){
-    
-    }
+    public static void main(String[] args) {
+    	 ApplicationContext   appc  = new ClassPathXmlApplicationContext("applicationContext.xml");
+   	     appc.getBean("sessionFactory");
+	}
 }

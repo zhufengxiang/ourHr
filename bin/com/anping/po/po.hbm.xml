@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.anping.po">
+<!--  这是一张部门表  它的外键就是自己  主键为id-->
+    <class name="Depart" table="Depart">
+    <!-- id  是指定 -->
+	<id name="id"    type="integer"  >
+	 <generator class="native">
+      
+     </generator>
+       </id>
+		<property name="text" not-null="true" type="string" length="30" /><!-- 功能名 -->
+		<property name="leaf" not-null="true" type="integer"/>  <!--  在ext中显示是不是叶子-->
+		<property name="checked" not-null="true" type="integer"/> <!--  在ext 中是否被选中-->
+		<property name="expandable" not-null="true" type="integer"/>  <!--  是否可以展开-->
+		<property name="expanded" not-null="true" type="integer"/><!--  是否展开-->
+		 	<property name="url"    length="40" type="string"/><!--  面板说在的地址-->
+		 	<property name="sort"  type="integer" /><!--  主菜单排序-->
+  	<set name="children"  inverse="true"     cascade="all"  >   
+  	     <key  column="pid" ></key>   
+     <one-to-many class="Depart" /> 
+       </set>     
+ 	     <many-to-one name="parent" class="Depart"    column="pid"   cascade="all"/>    
+	        
+ 	</class>
+	   
+	   
+  <class name="Resume" table="t_ourHr_resume">
+    <!--  --> 
+    <id  name="id" type="integer">
+  	 <generator class="native">
+      
+     </generator>
+     </id> 
+    <property name="state" type="integer"></property><!-- 简历的状态 --> 
+   	<property name="releaseTime" type="date"></property><!--简历发布的时间  -->
+    <property name="employName" type="string" length="10"></property><!--求职者姓名  -->
+    <many-to-one name="department" class="com.ourHr.chengshide.po.Department" column="departmentId"  cascade="all" /><!-- 应聘部门 -->
+    <!-- 职位 -->
+    <many-to-one name="postion" class="com.ourHr.wuliang.po.Position" column="positionId" cascade="all" ></many-to-one> 
+     <property name="sex" type="string" length="1"></property><!-- 性别 -->
+     <property name="nationlity" type="string"  length="20"></property><!--国籍  -->
+    <property name="phontoUrl" type="string" length="30"></property><!-- 照片地址 -->
+    <property name="employType" type="string" length="10"></property><!-- 招聘类型 -->
+    <property name="address" type="string" length="20"></property><!-- 地址 -->
+     <property name="post" type="string" length="6"></property><!--邮编  -->
+     <property name="telphone" type="string" length="11"></property><!-- 电话号码11位 -->
+     <property name="familyPhone" type="string" length="11"></property><!-- 家庭号码 -->   
+    <property name="email" type="string" length="30"></property><!--电子邮件  -->
+     <property name="enjoy" type="string" length="40"></property><!--兴趣爱好  -->
+     <property name="speciality" type="string" length="40"></property><!--特长  -->
+      <property name="faith" type="string" length="10"></property><!--信念  -->
+      <property name="age" type="integer"></property><!--年龄  -->
+     <property name="degree" type="string" length="10"></property><!-- 教育程度 -->
+     <property name="educateAge" type="integer"></property><!--教育年限  -->
+     <property name="major" type="string" length="10"></property><!-- 专业 -->
+     <property name="graducateSchool" type="string" length="15"></property><!-- 毕业院校 -->
+     <property name="idCard" type="string" length="20"></property><!-- 生分证 -->
+      <property name="birthAddress" type="string" length="15"/><!-- 出生地 -->
+      <property name="exceptedSalay" type="integer"></property><!--期望的薪酬  -->
+      <property name="birthday" type="date"></property><!-- 出生日期 -->
+      <property name="personExperience" type="string" length="100"></property><!-- 个人经历 -->
+      <property name="remaker" type="string" length="40"></property><!-- 备注 -->
+      <property name="filesAdress" type="string" length="30"></property><!--档案附件地址  -->
+  </class>
+
+   <class name="Audition" table="t_ourHr_audition">
+   <!-- id -->
+	   <id type="integer">
+	 	 <generator class="native">
+      
+     </generator>
+	   </id> 
+	   <!--关联的简历  --> 
+  <many-to-one name="resume" class="com.anping.po.Resume" column="rid" unique="true" cascade="all"/>
+  
+  <!--  赛选的结果-->
+  <property name="state" type="integer"></property> 
+  <!--  面试次数--> 
+  <property name="interNum" type="integer"></property>
+   <!--笔试次数  --> 
+   <property name="writternNum" type="integer"></property> 
+   <!-- 笔试分数 --> 
+   <property name="writternPoint" type="integer"></property>
+   <property name="opinion" type="string" length="50"></property>  
+   </class>
+   
+
+   <class name="AuditionRecord" table="t_ourHr_auditionRecord">
+   <!-- id -->
+	   <id type="integer">
+	 	 <generator class="native">
+      
+     </generator>
+	   </id> 
+	   <!--关联的简历  --> 
+  <many-to-one name="resume" class="com.anping.po.Resume" column="rid" unique="true" cascade="all"/>
+  
+  <!-- 审核状态-->
+  <property name="state" type="integer"></property> 
+  <!--形象等级--> 
+  <property name="imageLevel" type="string" length="10"></property>
+   <!--口才等级  --> 
+   <property name="speechLevel" type="integer"></property> 
+   <!--外语水平 --> 
+   <property name="forigenLevel" type="string" length="10"></property>
+  <!-- 应变能力 -->
+   <property name="strainCapacity" type="integer"  ></property>  
+  <!-- EQ等级 -->
+   <property name="EQLevel" type="integer"></property>
+   <!-- iq等级 -->
+   <property name="IQLevel" type="integer"></property> 
+   <!-- 综合素质 -->
+   <property name="overallQuality" type="integer"></property>
+   <!-- 面试评价 -->
+   <property name="opinion" type="string"></property>
+   <!-- 面试记录的状态 -->
+   <property name="status" type="integer"></property>
+   
+   </class>
+   
+   <class name="Leave" table="t_ourHr_leave">
+   	<id name="id"    type="integer"  >
+		 <generator class="native">
+      
+     </generator>
+       </id>
+        <many-to-one name="record" class="com.ourHr.hehui.po.Record" cascade="all" column="rid" ></many-to-one>
+	 <property name="day" type="integer"></property>	 
+    <property name="reason" type="string"></property>
+   
+   </class>
+   
+   
+</hibernate-mapping>

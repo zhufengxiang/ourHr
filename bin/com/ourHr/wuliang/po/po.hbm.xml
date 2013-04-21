@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.ourHr.wuliang.po">
+<!--  这是一张部门表  它的外键就是自己  主键为id-->
+    <class name="Position" table="t_ourHr_position">
+    <!-- id  是指定 -->
+		<id name="id"    type="integer" >
+			<generator class="native">            
+            </generator>
+       </id>
+		<property name="nums" not-null="true" column="nums" type="string" length="20"/>  <!--  编号与id的不同，编号确定职务：部门经理   副经理  主管  普通人员 四个级别可以用 （1001表示）-->
+		<property name="name" not-null="true" column="name" type="string" length="30"/> <!--职位名称-->
+		<property name="explain" not-null="true" column="explains" type="string" length="120"/>  <!-- 职位说明-->
+		<property name="standara" not-null="true" column="standara" type="string" length="120"/><!-- 职位规范-->
+		<property name="booker" not-null="true" column="booker" type="string" length="30"/><!-- 登记人-->
+		<property name="oldDate" not-null="true"  column="oldDate"  type="date" /><!--  部门创建时间-->
+		<property name="changer"  type="string" column="changer" length="30" /><!--  变更人-->
+		<property name="newDate"  type="date" column="newDate"/><!-- 变更时间	-->	  	
+ 	</class>
+ 	
+	 <class name="PositionPublish" table="t_ourHr_positionPublish">
+    <!-- id  是指定 -->
+		<id name="id"    type="integer" >
+			<generator class="native">            
+            </generator>
+       </id>
+		<property name="nums" not-null="true"  column="nums" type="integer"  /><!-- 功能名 -->
+		<property name="types" not-null="true"  column="types" type="string" length="30"/>  
+		<property name="descs" not-null="true" column="descs" type="string" length="30"/> <!--职位名称-->
+		<property name="necessary" not-null="true" column="necessary" type="string" length="120"/>  <!-- 职位说明-->
+		<property name="deadtime" not-null="true" column="deadtime" type="date" /><!-- 职位规范-->
+		<property name="booker" not-null="true" column="booker" type="string" length="30"/><!-- 登记人-->
+		<property name="oldDate" not-null="true" column="oldDate" type="date"/><!--  部门创建时间-->
+		<property name="changer"  type="string" column="changer" length="30" /><!--  变更人-->
+		<property name="newDate"  type="date" column="newDate"/><!-- 变更时间	-->	  
+		<!-- 用一对一形式，通过unique=true来表示 --><!-- 
+		<many-to-one name="posistion" column="posistion" class="com.ourHr.wuliang.po.Position" unique="true"  cascade="save-update"/>
+		由于职务发布表值需要调用出来职务和部门，不需增删改操作，所以只需要级联查询
+		 -->
+		 
+		<!-- 实验中，基于连接表的单向“一对一”关联，是一种很少见的情况，不推荐使用，其中指定many-to-one的unique="true"，
+		为单向“一对一”，不指定就是单向“多对一” ，其中不了解基于连接表意义-->
+		<join table="t_ourHr_position" optional="true">
+        <key column="id" unique="true"/>
+        <many-to-one name="posistion" column="posistionId"  unique="true" class="com.ourHr.wuliang.po.Position" not-null="true"/>        
+        </join>
+        <join table="Department" optional="true">
+        <key column="id" unique="true"/>
+            <many-to-one name="department" column="departmentId"  unique="true" class="com.ourHr.chengshide.po.Department" not-null="true"/>	      
+        </join> 
+ 	</class>  
+ 	<!--  -->
+ 	 <class name="PositionMove" table="t_ourHr_PositionMove">
+    <!-- id  是指定 -->
+		<id name="id"    type="integer" >
+			<generator class="native">            
+            </generator>
+       </id> 
+		<property name="nums" not-null="true" column="num" type="integer"  /><!-- 功能名 -->
+		<property name="types" not-null="true" column="type" type="string" length="30"/>  
+		<property name="moveDesc" not-null="true" column="moveDesc" type="string" length="30"/> <!--职位名称-->
+		<property name="necessary" not-null="true" column="necessary" type="string" length="120"/>  <!-- 职位说明-->		
+		<property name="booker" not-null="true" column="booker" type="string" length="30"/><!-- 登记人-->
+		<property name="oldDate" not-null="true" column="oldDate" type="date"/><!--  部门创建时间-->
+		<property name="checker"  type="string" column="checker" length="30"/><!--  变更人-->
+		<property name="checkDate"  type="date" column="checkDate" /><!-- 变更时间	-->	  
+		<property name="remark"  type="string" column="remark" length="240"/><!-- 变更时间	-->	  
+				 
+		<!-- 实验中，基于连接表的单向“一对一”关联，是一种很少见的情况，不推荐使用，其中指定many-to-one的unique="true"，
+		为单向“一对一”，不指定就是单向“多对一” ，其中不了解基于连接表意义-->		
+		<join table="t_ourHr_position" optional="true">
+        <key column="id" unique="true"/>
+        <many-to-one name="posistion" column="posistionId"  unique="true" class="com.ourHr.wuliang.po.Position" not-null="true"/>
+        </join> 
+        <join table="t_Salary" optional="true">
+        <key column="id" unique="true"/>        
+        <many-to-one name="salary" column="salaryId"  unique="true" class="com.ourHr.shaotingting.po.Salary" not-null="true"/>
+         </join>
+        <join table="Department" optional="true">
+        <key column="id" unique="true"/>
+            <many-to-one name="department" column="departmentId"  unique="true" class="com.ourHr.chengshide.po.Department" not-null="true"/>	      
+        </join> 	
+ 	</class>  
+ 	
+
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.ourHr.chengshide.po">
+<!--  这是一张部门表  它的外键就是自己  主键为id-->
+    <class name="Department" table="Department">
+    <!-- id  是指定 -->
+			<id name="id"    type="integer"  >
+	 <generator class="native">
+        
+     </generator>
+       </id>
+	 	        
+ 	</class>
+	   
+
+</hibernate-mapping>
